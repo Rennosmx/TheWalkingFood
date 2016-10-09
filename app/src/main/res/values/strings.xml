@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TheWalkingFood</string>
+    <string name="digite_seu_nome">Digite seu nome</string>
+    <string name="digite_seu_n_mero">Digite seu número</string>
+    <string name="telefone">Telefone</string>
+    <string name="nome">Nome</string>
 </resources>

@@ -24,4 +24,6 @@ public class SelecaoPerfilActivity extends AppCompatActivity {
         Intent intent = new Intent(SelecaoPerfilActivity.this, CadastroConsumidorActivity.class);
         startActivity(intent);
     }
+
+
 }
