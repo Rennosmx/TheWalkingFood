@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/selecaoperfilcadastropng"
+    android:background="@drawable/planodefundo_padrao"
     tools:context="imd.ufrn.br.thewalkingfood.CadastroAmbulanteActivity">
 
     <EditText
@@ -55,6 +55,36 @@
         android:textColor="#484848"
         android:textSize="30sp"
         android:layout_below="@+id/etNomeAmbulante"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Finalizar Cadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnFinalizarCadastro"
+        android:onClick="finalizarCadastro"
+        android:background="#a7425c"
+        android:elevation="0dp"
+        android:layout_alignBaseline="@+id/btnAdicionarProduto"
+        android:layout_alignBottom="@+id/btnAdicionarProduto"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="13dp"
+        android:layout_marginEnd="13dp" />
+
+    <Button
+        android:text="Adicionar Produtos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnAdicionarProduto"
+        android:onClick="adicionarProduto"
+        android:background="#a7425c"
+        android:layout_marginTop="43dp"
+        android:elevation="0dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_below="@+id/etTelefoneAmbulante"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

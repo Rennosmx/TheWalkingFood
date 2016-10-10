@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    protected ProgressBar barraProgresso;
+    private ProgressBar barraProgresso;
     private int tempoProgresso = 0;
 
 
@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
     public void progressoFinalizado(){
         Intent intent = new Intent(MainActivity.this, SelecaoPerfilActivity.class);
         startActivity(intent);
-        finish();
     }
 
 }
