@@ -5,7 +5,6 @@ package imd.ufrn.br.thewalkingfood;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ProgressBar;
 
 import java.util.Random;
@@ -29,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Simulando o carregamento da Tela de Perfil
     public void carregar(){
-            final Thread thread = new Thread(){
+           final Thread thread = new Thread(){
 
             @Override
             public void run() {
@@ -56,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     public void progressoFinalizado(){
         Intent intent = new Intent(MainActivity.this, SelecaoPerfilActivity.class);
         startActivity(intent);
+        finish();
     }
 
 }
