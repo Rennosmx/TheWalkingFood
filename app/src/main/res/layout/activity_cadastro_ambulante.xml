@@ -62,7 +62,7 @@
         android:text="Finalizar Cadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnFinalizarCadastro"
+        android:id="@+id/finalizarCadastroAmbulante"
         android:onClick="finalizarCadastro"
         android:background="#a7425c"
         android:elevation="0dp"

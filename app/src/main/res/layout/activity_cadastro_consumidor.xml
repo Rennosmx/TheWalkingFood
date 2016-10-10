@@ -58,4 +58,15 @@
         android:layout_below="@+id/etNomeConsumidor"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Finalizar Cadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/finalizarCadastroConsumidor"
+        android:onClick="finalizarCadastro"
+        android:background="#a7425c"
+        android:elevation="0dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
