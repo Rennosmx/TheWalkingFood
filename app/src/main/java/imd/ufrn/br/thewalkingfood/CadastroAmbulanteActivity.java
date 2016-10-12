@@ -20,5 +20,7 @@ public class CadastroAmbulanteActivity extends AppCompatActivity {
     }
 
     public void finalizarCadastro(View view) {
+        Intent intent = new Intent(this, TelaInicialAmbulanteActivity.class);
+        startActivity(intent);
     }
 }

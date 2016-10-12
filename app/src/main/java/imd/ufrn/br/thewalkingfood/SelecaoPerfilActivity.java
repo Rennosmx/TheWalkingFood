@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 
 public class SelecaoPerfilActivity extends AppCompatActivity {
+
+    ImageButton imgConsumidor, imgAmbulante;
 
 
     @Override
@@ -13,6 +16,8 @@ public class SelecaoPerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selecao_perfil);
 
+        imgConsumidor = (ImageButton)findViewById(R.id.imgConsumidor);
+        imgAmbulante = (ImageButton)findViewById(R.id.imgAmbulante);
     }
 
     public void cadastroAmbulante(View view) {
