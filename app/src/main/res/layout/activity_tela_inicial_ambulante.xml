@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/planodefundo_padrao"
-    tools:context="imd.ufrn.br.thewalkingfood.TelaInicialAmbulanteActivity">
+    tools:context="imd.ufrn.br.thewalkingfood.TelaInicialVendedorActivity">
 
     <TabHost
         android:layout_width="match_parent"

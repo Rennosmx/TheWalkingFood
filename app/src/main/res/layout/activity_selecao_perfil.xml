@@ -12,27 +12,59 @@
     android:background="@drawable/planodefundo_padrao"
     tools:context="imd.ufrn.br.thewalkingfood.SelecaoPerfilActivity">
 
-    <ImageButton
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:background="@drawable/ambulante"
-        android:id="@+id/imgAmbulante"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="22dp"
-        android:layout_marginStart="22dp"
-        android:onClick="cadastroAmbulante"/>
+    <TextView
+        android:text="Selecione seu perfil."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textColor="#A7425C"
+        android:textSize="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="118dp" />
 
-    <ImageButton
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:background="@drawable/consumidor"
-        android:id="@+id/imgConsumidor"
-        android:layout_alignTop="@+id/imgAmbulante"
-        android:layout_toRightOf="@+id/imgAmbulante"
-        android:layout_toEndOf="@+id/imgAmbulante"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
-        android:onClick="cadastroConsumidor"/>
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/radioGroup"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vendedor"
+            android:textColor="#A7425C"
+            android:textSize="17dp"
+            android:id="@+id/rBtnVendedor"
+            android:checked="false"
+            android:buttonTint="@color/colorPrimary"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Consumidor"
+            android:textColor="#A7425C"
+            android:textSize="17dp"
+            android:id="@+id/rBtnConsumidor"
+            android:checked="false"
+            android:buttonTint="@color/colorPrimary"
+            android:layout_gravity="center_horizontal" />
+
+    </RadioGroup>
+
+    <Button
+        android:text="Logar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="86dp"
+        android:id="@+id/button"
+        android:layout_below="@+id/radioGroup"
+        android:layout_centerHorizontal="true"
+        android:onClick="telaCadastro"
+        android:background="#A7425C"/>
+
+
 </RelativeLayout>

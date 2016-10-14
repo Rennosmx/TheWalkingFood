@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class CadastroAmbulanteActivity extends AppCompatActivity {
+public class CadastroVendedorActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class CadastroAmbulanteActivity extends AppCompatActivity {
     }
 
     public void finalizarCadastro(View view) {
-        Intent intent = new Intent(this, TelaInicialAmbulanteActivity.class);
+        Intent intent = new Intent(this, TelaInicialVendedorActivity.class);
         startActivity(intent);
         finish();
     }

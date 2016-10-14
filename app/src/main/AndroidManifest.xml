@@ -21,7 +21,7 @@
             android:name=".SelecaoPerfilActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".CadastroAmbulanteActivity"
+            android:name=".CadastroVendedorActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".CadastroConsumidorActivity"
@@ -33,7 +33,7 @@
             android:name=".TelaInicialConsumidorActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".TelaInicialAmbulanteActivity"
+            android:name=".TelaInicialVendedorActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 

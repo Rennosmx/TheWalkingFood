@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.TabHost;
 import android.widget.TextView;
 
-public class TelaInicialAmbulanteActivity extends AppCompatActivity {
+public class TelaInicialVendedorActivity extends AppCompatActivity {
 
     TabHost tabelas;
     TabHost.TabSpec tb;
