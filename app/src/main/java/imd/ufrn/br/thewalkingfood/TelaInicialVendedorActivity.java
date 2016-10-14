@@ -15,7 +15,7 @@ public class TelaInicialVendedorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_inicial_ambulante);
+        setContentView(R.layout.activity_tela_inicial_vendedor);
 
         tabelas = (TabHost) findViewById(R.id.tabelasAmbulante);
         tabelas.setup();

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_cadastro_consumidor"
     android:layout_width="match_parent"
@@ -12,60 +13,83 @@
     android:background="@drawable/planodefundo_padrao"
     tools:context="imd.ufrn.br.thewalkingfood.CadastroConsumidorActivity">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:textSize="20dp"
-        android:id="@+id/etNomeConsumidor"
-        android:hint="@string/digite_seu_nome"
-        android:textColorHint="#A7425C"
-        android:textColor="#484848"
-        android:layout_below="@+id/tvNomeConsumidor"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:textSize="20dp"
-        android:layout_below="@+id/tvTelefoneConsumidor"
-        android:layout_alignRight="@+id/etNomeConsumidor"
-        android:layout_alignEnd="@+id/etNomeConsumidor"
-        android:id="@+id/etTelefoneConsumidor"
-        android:hint="@string/digite_seu_n_mero"
-        android:textColorHint="#A7425C"
-        android:textColor="#484848" />
-
-    <TextView
-        android:text="@string/nome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvNomeConsumidor"
-        android:textColor="#484848"
-        android:textSize="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="@string/telefone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvTelefoneConsumidor"
-        android:textColor="#484848"
-        android:textSize="30dp"
-        android:layout_below="@+id/etNomeConsumidor"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <Button
-        android:text="Finalizar Cadastro"
+        android:text="Cadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/finalizarCadastroConsumidor"
         android:onClick="finalizarCadastro"
-        android:background="#a7425c"
-        android:layout_centerVertical="true"
+        android:backgroundTint="#A7425C"
+        android:background="@drawable/screen_border"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="76dp" />
+
+    <TextView
+        android:text="Telefone:"
+        android:textColor="#A7425C"
+        android:textSize="22sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:id="@+id/tvTelefoneConsumidor"
+        android:layout_alignTop="@+id/tvNomeConsumidor"
+        android:layout_alignLeft="@+id/tvNomeConsumidor"
+        android:layout_alignStart="@+id/tvNomeConsumidor"
+        android:layout_below="@id/tvNomeConsumidor"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Digite seu nome"
+        android:textColorHint="#484848"
+        android:textColor="#484848"
+        android:backgroundTint="#A7425C"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_alignBaseline="@+id/tvNomeConsumidor"
+        android:layout_alignBottom="@+id/tvNomeConsumidor"
+        android:layout_toRightOf="@+id/tvTelefoneConsumidor"
+        android:layout_toEndOf="@+id/tvTelefoneConsumidor"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:hint="Digite seu número"
+        android:textColorHint="#484848"
+        android:textColor="#484848"
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:layout_alignBaseline="@+id/tvTelefoneConsumidor"
+        android:layout_alignBottom="@+id/tvTelefoneConsumidor"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:srcCompat="@android:drawable/sym_def_app_icon"
+        android:layout_marginBottom="44dp"
+        android:id="@+id/imageView"
+        android:layout_above="@+id/editText"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Nome:"
+        android:textSize="22sp"
+        android:textColor="#A7425C"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="159dp"
+        android:id="@+id/tvNomeConsumidor"
+        android:layout_marginRight="13dp"
+        android:layout_marginEnd="13dp"
+        android:layout_above="@+id/finalizarCadastroConsumidor"
+        android:layout_toLeftOf="@+id/finalizarCadastroConsumidor"
+        android:layout_toStartOf="@+id/finalizarCadastroConsumidor" />
+
 </RelativeLayout>

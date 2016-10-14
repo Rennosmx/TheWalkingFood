@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_escolha_de_perfil"
     android:layout_width="match_parent"
@@ -13,12 +13,12 @@
     tools:context="imd.ufrn.br.thewalkingfood.SelecaoPerfilActivity">
 
     <TextView
-        android:text="Selecione seu perfil."
+        android:text="@string/selecione_seu_perfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:textColor="#A7425C"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="118dp" />
@@ -34,29 +34,30 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Vendedor"
+            android:text="@string/vendedor"
             android:textColor="#A7425C"
-            android:textSize="17dp"
+            android:textSize="17sp"
             android:id="@+id/rBtnVendedor"
             android:checked="false"
-            android:buttonTint="@color/colorPrimary"
+            android:buttonTint="#A7425C"
             />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Consumidor"
+            android:text="@string/consumidor"
             android:textColor="#A7425C"
-            android:textSize="17dp"
+            android:textSize="17sp"
             android:id="@+id/rBtnConsumidor"
             android:checked="false"
-            android:buttonTint="@color/colorPrimary"
+            android:buttonTint="#A7425C"
             android:layout_gravity="center_horizontal" />
 
     </RadioGroup>
 
     <Button
-        android:text="Logar"
+        android:text="Logar com Facebook"
+        android:backgroundTint="#3B5A9A"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="86dp"
@@ -64,7 +65,7 @@
         android:layout_below="@+id/radioGroup"
         android:layout_centerHorizontal="true"
         android:onClick="telaCadastro"
-        android:background="#A7425C"/>
-
+        android:background="@drawable/screen_border"
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
 
 </RelativeLayout>

@@ -4,4 +4,8 @@
     <string name="digite_seu_n_mero">Digite seu número</string>
     <string name="telefone">Telefone</string>
     <string name="nome">Nome</string>
+    <string name="selecione_seu_perfil">Selecione seu perfil.</string>
+    <string name="vendedor">Vendedor</string>
+    <string name="consumidor">Consumidor</string>
+    <string name="logar">Logar</string>
 </resources>
