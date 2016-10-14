@@ -1,15 +1,19 @@
 package imd.ufrn.br.thewalkingfood;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TabHost;
+import android.widget.TabWidget;
+import android.widget.TextView;
 
 public class TelaInicialConsumidorActivity extends AppCompatActivity {
 
     TabHost tabelas;
     TabHost.TabSpec tb;
+    TextView textoVinho, textoBranco;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +43,31 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity {
         tb.setIndicator("FEED");
         tabelas.addTab(tb);
 
+        tabelas.getTabWidget().getChildAt(tabelas.getCurrentTab()).setBackgroundColor(Color.parseColor("#FFFFFF"));
+
+        textoVinho = (TextView) tabelas.getTabWidget().getChildAt(tabelas.getCurrentTab()).findViewById(android.R.id.title);
+        textoVinho.setTextColor(Color.parseColor("#A7425C"));
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        // Metodo para atualizar coloração de texto e background das abas
+        tabelas.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+
+            public void onTabChanged(String arg0) {
+                for (int i = 0; i < tabelas.getTabWidget().getChildCount(); i++) {
+                    tabelas.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#A7425C"));
+
+                    textoBranco = (TextView) tabelas.getTabWidget().getChildAt(i).findViewById(android.R.id.title);
+                    textoBranco.setTextColor(Color.parseColor("#FFFFFF"));
+                }
+                tabelas.getTabWidget().getChildAt(tabelas.getCurrentTab()).setBackgroundColor(Color.parseColor("#FFFFFF"));
+
+                textoVinho = (TextView) tabelas.getTabWidget().getChildAt(tabelas.getCurrentTab()).findViewById(android.R.id.title);
+                textoVinho.setTextColor(Color.parseColor("#A7425C"));
+            }
+        });
+    }
 }

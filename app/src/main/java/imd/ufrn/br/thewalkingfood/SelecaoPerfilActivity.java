@@ -23,11 +23,13 @@ public class SelecaoPerfilActivity extends AppCompatActivity {
     public void cadastroAmbulante(View view) {
         Intent intent = new Intent(SelecaoPerfilActivity.this, CadastroAmbulanteActivity.class);
         startActivity(intent);
+        finish();
     }
 
     public void cadastroConsumidor(View view) {
         Intent intent = new Intent(SelecaoPerfilActivity.this, CadastroConsumidorActivity.class);
         startActivity(intent);
+        finish();
     }
 
 

@@ -16,7 +16,7 @@ public class CadastroConsumidorActivity extends AppCompatActivity {
     public void finalizarCadastro(View view) {
         Intent intent = new Intent(this, TelaInicialConsumidorActivity.class);
         startActivity(intent);
-
+        finish();
 
     }
 }

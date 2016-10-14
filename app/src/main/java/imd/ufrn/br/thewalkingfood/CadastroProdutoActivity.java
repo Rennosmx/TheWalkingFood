@@ -36,5 +36,6 @@ public class CadastroProdutoActivity extends AppCompatActivity {
     }
 
     public void cadastrarProduto(View view) {
+        finish();
     }
 }

@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     public void progressoFinalizado(){
         Intent intent = new Intent(MainActivity.this, SelecaoPerfilActivity.class);
         startActivity(intent);
+        finish();
     }
 
 }
