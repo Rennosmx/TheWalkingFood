@@ -4,8 +4,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.RadioButton;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 
 public class SelecaoPerfilActivity extends AppCompatActivity {
 
@@ -15,10 +16,14 @@ public class SelecaoPerfilActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*FacebookSdk.sdkInitialize(getApplicationContext());
+        AppEventsLogger.activateApp(this);
+        */
         setContentView(R.layout.activity_selecao_perfil);
 
         rbVendedor = (RadioButton)findViewById(R.id.rBtnVendedor);
         rbConsumidor = (RadioButton)findViewById(R.id.rBtnConsumidor);
+
     }
 
 
@@ -27,12 +32,12 @@ public class SelecaoPerfilActivity extends AppCompatActivity {
         if(rbVendedor.isChecked()){
             Intent intent = new Intent(SelecaoPerfilActivity.this, CadastroVendedorActivity.class);
             startActivity(intent);
-            finish();
+            //finish();
         }
         if(rbConsumidor.isChecked()){
             Intent intent = new Intent(SelecaoPerfilActivity.this, CadastroConsumidorActivity.class);
             startActivity(intent);
-            finish();
+            //finish();
         }
     }
 }

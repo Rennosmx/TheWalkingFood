@@ -20,6 +20,7 @@ public class TelaInicialVendedorActivity extends AppCompatActivity {
         tabelas = (TabHost) findViewById(R.id.tabelasAmbulante);
         tabelas.setup();
 
+        //Inclusão de abas no TabHost
         tb = tabelas.newTabSpec("PEDIDOS");
         tb.setContent(R.id.tab1);
         tb.setIndicator("PEDIDOS");
@@ -35,6 +36,7 @@ public class TelaInicialVendedorActivity extends AppCompatActivity {
         tb.setIndicator("FEED");
         tabelas.addTab(tb);
 
+        //Coloração Inicial da Aba selecionada por padrão(MAPA)
         tabelas.getTabWidget().getChildAt(tabelas.getCurrentTab()).setBackgroundColor(Color.parseColor("#FFFFFF"));
 
         textoVinho = (TextView) tabelas.getTabWidget().getChildAt(tabelas.getCurrentTab()).findViewById(android.R.id.title);

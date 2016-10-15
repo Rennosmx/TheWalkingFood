@@ -56,16 +56,15 @@
     </RadioGroup>
 
     <Button
-        android:text="Logar com Facebook"
+        android:text="Logar"
+        android:background="@drawable/screen_border"
         android:backgroundTint="#3B5A9A"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="86dp"
-        android:id="@+id/button"
         android:layout_below="@+id/radioGroup"
         android:layout_centerHorizontal="true"
-        android:onClick="telaCadastro"
-        android:background="@drawable/screen_border"
-        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button" />
+        android:layout_marginTop="77dp"
+        android:id="@+id/button2"
+        android:onClick="telaCadastro"/>
 
 </RelativeLayout>
