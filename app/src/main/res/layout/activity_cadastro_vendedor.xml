@@ -11,52 +11,58 @@
     android:background="@drawable/planodefundo_padrao"
     tools:context="imd.ufrn.br.thewalkingfood.CadastroVendedorActivity">
 
+    <TextView
+        android:text="Telefone:"
+        android:textColor="#A7425C"
+        android:textSize="22sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:id="@+id/tvTelefoneVendedor"
+        android:layout_alignTop="@+id/tvNomeVendedor"
+        android:layout_alignLeft="@+id/tvNomeVendedor"
+        android:layout_alignStart="@+id/tvNomeVendedor"
+        android:layout_below="@id/tvNomeVendedor"/>
+
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:textSize="20dp"
-        android:id="@+id/etNomeAmbulante"
-        android:hint="@string/digite_seu_nome"
-        android:textColorHint="#A7425C"
+        android:hint="Digite seu nome"
+        android:textColorHint="#484848"
         android:textColor="#484848"
-        android:layout_below="@+id/tvNomeAmbulante"
-        android:layout_centerHorizontal="true" />
+        android:backgroundTint="#A7425C"
+        android:ems="10"
+        android:id="@+id/fbNomeVendedor"
+        android:layout_alignBaseline="@+id/tvNomeVendedor"
+        android:layout_alignBottom="@+id/tvNomeVendedor"
+        android:layout_toRightOf="@+id/tvTelefoneVendedor"
+        android:layout_toEndOf="@+id/tvTelefoneVendedor"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="phone"
-        android:textSize="20dp"
-        android:layout_below="@+id/tvTelefoneAmbulante"
-        android:layout_alignRight="@+id/etNomeAmbulante"
-        android:layout_alignEnd="@+id/etNomeAmbulante"
-        android:id="@+id/etTelefoneAmbulante"
-        android:hint="@string/digite_seu_n_mero"
-        android:textColorHint="#A7425C"
-        android:textColor="#484848" />
+        android:hint="Digite seu número"
+        android:textColorHint="#484848"
+        android:textColor="#484848"
+        android:ems="10"
+        android:id="@+id/fbNumeroVendedor"
+        android:layout_alignBaseline="@+id/tvTelefoneVendedor"
+        android:layout_alignBottom="@+id/tvTelefoneVendedor"
+        android:layout_alignLeft="@+id/fbNomeVendedor"
+        android:layout_alignStart="@+id/fbNomeVendedor" />
 
-    <TextView
-        android:text="@string/nome"
+
+    <com.facebook.login.widget.ProfilePictureView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvNomeAmbulante"
-        android:textColor="#484848"
-        android:textSize="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="@string/telefone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvTelefoneAmbulante"
-        android:textColor="#484848"
-        android:textSize="30dp"
-        android:layout_below="@+id/etNomeAmbulante"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/fbNomeVendedor"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp"
+        android:id="@+id/fbImg" />
 
     <Button
         android:text="Finalizar Cadastro"
@@ -64,7 +70,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/finalizarCadastroAmbulante"
         android:onClick="finalizarCadastro"
-        android:background="#a7425c"
+        android:backgroundTint="#a7425c"
+        android:background="@drawable/screen_border"
         android:layout_alignBaseline="@+id/btnAdicionarProduto"
         android:layout_alignBottom="@+id/btnAdicionarProduto"
         android:layout_alignParentRight="true"
@@ -78,13 +85,28 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnAdicionarProduto"
         android:onClick="adicionarProduto"
-        android:background="#a7425c"
-        android:layout_marginTop="43dp"
+        android:backgroundTint="#a7425c"
+        android:background="@drawable/screen_border"
         android:elevation="0dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:layout_below="@+id/etTelefoneAmbulante"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="52dp" />
+
+    <TextView
+        android:text="Nome:"
+        android:textSize="22sp"
+        android:textColor="#A7425C"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="184dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginEnd="13dp"
+        android:id="@+id/tvNomeVendedor"
+        android:layout_above="@+id/btnAdicionarProduto"
+        android:layout_toLeftOf="@+id/fbImg"
+        android:layout_toStartOf="@+id/fbImg" />
 
 </RelativeLayout>

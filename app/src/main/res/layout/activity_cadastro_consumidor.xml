@@ -32,11 +32,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="54dp"
-        android:id="@+id/tvTelefoneConsumidor"
-        android:layout_alignTop="@+id/tvNomeConsumidor"
-        android:layout_alignLeft="@+id/tvNomeConsumidor"
-        android:layout_alignStart="@+id/tvNomeConsumidor"
-        android:layout_below="@id/tvNomeConsumidor"/>
+        android:id="@+id/tvTelefoneVendedor"
+        android:layout_alignTop="@+id/tvNomeVendedor"
+        android:layout_alignLeft="@+id/tvNomeVendedor"
+        android:layout_alignStart="@+id/tvNomeVendedor"
+        android:layout_below="@id/tvNomeVendedor"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -47,11 +47,11 @@
         android:textColor="#484848"
         android:backgroundTint="#A7425C"
         android:ems="10"
-        android:id="@+id/fbNome"
-        android:layout_alignBaseline="@+id/tvNomeConsumidor"
-        android:layout_alignBottom="@+id/tvNomeConsumidor"
-        android:layout_toRightOf="@+id/tvTelefoneConsumidor"
-        android:layout_toEndOf="@+id/tvTelefoneConsumidor"
+        android:id="@+id/fbNomeVendedor"
+        android:layout_alignBaseline="@+id/tvNomeVendedor"
+        android:layout_alignBottom="@+id/tvNomeVendedor"
+        android:layout_toRightOf="@+id/tvTelefoneVendedor"
+        android:layout_toEndOf="@+id/tvTelefoneVendedor"
         android:layout_marginLeft="18dp"
         android:layout_marginStart="18dp" />
 
@@ -64,10 +64,10 @@
         android:textColor="#484848"
         android:ems="10"
         android:id="@+id/fbNumero"
-        android:layout_alignBaseline="@+id/tvTelefoneConsumidor"
-        android:layout_alignBottom="@+id/tvTelefoneConsumidor"
-        android:layout_alignLeft="@+id/fbNome"
-        android:layout_alignStart="@+id/fbNome" />
+        android:layout_alignBaseline="@+id/tvTelefoneVendedor"
+        android:layout_alignBottom="@+id/tvTelefoneVendedor"
+        android:layout_alignLeft="@+id/fbNomeVendedor"
+        android:layout_alignStart="@+id/fbNomeVendedor" />
 
 
     <TextView
@@ -77,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="159dp"
-        android:id="@+id/tvNomeConsumidor"
+        android:id="@+id/tvNomeVendedor"
         android:layout_marginRight="13dp"
         android:layout_marginEnd="13dp"
         android:layout_above="@+id/finalizarCadastroConsumidor"
@@ -87,7 +87,7 @@
     <com.facebook.login.widget.ProfilePictureView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/fbNome"
+        android:layout_above="@+id/fbNomeVendedor"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="34dp"
         android:id="@+id/fbImg" />
