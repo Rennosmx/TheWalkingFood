@@ -47,7 +47,7 @@
         android:textColor="#484848"
         android:backgroundTint="#A7425C"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/fbNome"
         android:layout_alignBaseline="@+id/tvNomeConsumidor"
         android:layout_alignBottom="@+id/tvNomeConsumidor"
         android:layout_toRightOf="@+id/tvTelefoneConsumidor"
@@ -63,20 +63,12 @@
         android:textColorHint="#484848"
         android:textColor="#484848"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/fbNumero"
         android:layout_alignBaseline="@+id/tvTelefoneConsumidor"
         android:layout_alignBottom="@+id/tvTelefoneConsumidor"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
+        android:layout_alignLeft="@+id/fbNome"
+        android:layout_alignStart="@+id/fbNome" />
 
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        app:srcCompat="@android:drawable/sym_def_app_icon"
-        android:layout_marginBottom="44dp"
-        android:id="@+id/imageView"
-        android:layout_above="@+id/editText"
-        android:layout_centerHorizontal="true" />
 
     <TextView
         android:text="Nome:"
@@ -91,5 +83,14 @@
         android:layout_above="@+id/finalizarCadastroConsumidor"
         android:layout_toLeftOf="@+id/finalizarCadastroConsumidor"
         android:layout_toStartOf="@+id/finalizarCadastroConsumidor" />
+
+    <com.facebook.login.widget.ProfilePictureView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fbNome"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp"
+        android:id="@+id/fbImg" />
+
 
 </RelativeLayout>

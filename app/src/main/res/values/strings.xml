@@ -8,5 +8,7 @@
     <string name="vendedor">Vendedor</string>
     <string name="consumidor">Consumidor</string>
     <string name="logar">Logar</string>
-    <string name="facebook_app_id">1712826322372560</string>
+    <string name="facebook_app_id">1119752421440474</string>
+    <string name="cancel_login">Login cancelado</string>
+    <string name="error_login">Ocorreu um erro no login</string>
 </resources>
