@@ -4,19 +4,80 @@
     android:id="@+id/activity_tela_inicial_consumidor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/planodefundo_padrao"
+
+    android:background="#ffe26f"
     tools:context="imd.ufrn.br.thewalkingfood.TelaInicialConsumidorActivity">
 
+<!--
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#a7425c"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:src="@drawable/icon_menu"
+            android:layout_marginLeft="10dp"
+            />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/icon_bicycle"
+            android:layout_centerHorizontal="true"
+            />
+
+    </RelativeLayout>
+ -->
+
+    <android.support.v7.widget.Toolbar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#a7425c"
+        android:elevation="4dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        android:gravity="center_horizontal"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_menu"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_bicycle"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.Toolbar>
 
     <TabHost
         android:layout_width="match_parent"
-        android:layout_height="300dip"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
         android:id="@+id/tabelasConsumidor"
-        android:paddingTop="@dimen/activity_vertical_margin"
+
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -27,6 +88,7 @@
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:layout_alignParentBottom="true"
                 android:background="#A7425C"
                 android:tabStripEnabled="false"/>
@@ -40,27 +102,168 @@
 
                 <LinearLayout
                     android:id="@+id/tab1"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical" />
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/mapa"
+                        android:scaleType="fitXY"
+                        />
+
+
+                </LinearLayout>
+
+
 
                 <LinearLayout
                     android:id="@+id/tab2"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"/>
+                    android:layout_height="match_parent">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/tela_inicial_consumidor_firstrow"
+                                android:layout_marginTop="20dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+
+                                >
+
+                                <ImageView
+                                    android:id="@+id/tela_inicial_consumidor_vendedorbutton"
+                                    android:layout_width="0dp"
+                                    android:layout_height="180dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/vendedor1"
+                                    />
+
+                                <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="180dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/vendedor2"
+                                    />
+
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_below="@+id/tela_inicial_consumidor_firstrow"
+                                android:layout_marginTop="20dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                >
+
+                                <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="180dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/vendedor3"
+                                    />
+
+                                <ImageView
+                                    android:id="@+id/mama_ImageView"
+                                    android:layout_width="0dp"
+                                    android:layout_height="180dp"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/vendedor4"
+                                    />
+
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+
+                    </ScrollView>
+
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/tab3"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"/>
+                    android:layout_height="match_parent">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/tela_inicial_consumidor_chat1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/chat1"
+                                />
+
+                            <ImageView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/chat2"
+                                />
+
+                        </LinearLayout>
+
+                    </ScrollView>
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/tab4"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"/>
+                    android:layout_height="match_parent">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/feed1"
+                                />
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/feed2"
+                                />
+
+
+
+                        </LinearLayout>
+
+                    </ScrollView>
+
+                </LinearLayout>
 
 
             </FrameLayout>

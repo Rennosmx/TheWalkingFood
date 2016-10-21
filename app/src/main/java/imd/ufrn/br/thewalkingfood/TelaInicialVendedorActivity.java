@@ -1,5 +1,6 @@
 package imd.ufrn.br.thewalkingfood;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,9 +22,9 @@ public class TelaInicialVendedorActivity extends AppCompatActivity {
         tabelas.setup();
 
         //Inclusão de abas no TabHost
-        tb = tabelas.newTabSpec("PEDIDOS");
+        tb = tabelas.newTabSpec("PRODUTOS");
         tb.setContent(R.id.tab1);
-        tb.setIndicator("PEDIDOS");
+        tb.setIndicator("PRODUTOS");
         tabelas.addTab(tb);
 
         tb = tabelas.newTabSpec("CHAT");
@@ -64,4 +65,20 @@ public class TelaInicialVendedorActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        // super.onBackPressed(); Do not call me!
+        goToTelaInicialConsumidor();
+        // Go to the previous web page.
+    }
+
+    public void goToTelaInicialConsumidor(){
+        Intent intent = new Intent(TelaInicialVendedorActivity.this, TelaInicialConsumidorActivity.class);
+        startActivity(intent);
+        finish();
+
+    }
+
 }

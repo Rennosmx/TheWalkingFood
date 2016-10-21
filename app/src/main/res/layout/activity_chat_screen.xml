@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_chat_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="#ffe26f"
+    tools:context="imd.ufrn.br.thewalkingfood.ChatScreenActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#a7425c"
+        android:elevation="4dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        android:gravity="center_horizontal"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_menu"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_bicycle"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.Toolbar>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+
+        >
+
+
+        <ImageView
+            android:id="@+id/chat_screen_profilestatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/chat_profile_simulation"
+            />
+
+        <ImageView
+            android:layout_below="@+id/chat_screen_profilestatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/chat_simulation"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fdfdfd"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/chat_smile"
+                />
+
+            <EditText
+                android:layout_weight="6"
+                android:layout_width="0dp"
+                android:text="Mensagem..."
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/chat_mic"
+                />
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/chat_camera"
+
+                />
+
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+</RelativeLayout>

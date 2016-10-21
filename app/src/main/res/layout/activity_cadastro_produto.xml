@@ -14,7 +14,7 @@
 
     <Button
         android:text="Cadastrar Produto"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/btAdicionarProduto"
         android:layout_alignParentBottom="true"

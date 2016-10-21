@@ -56,10 +56,11 @@
     </RadioGroup>
 
     <Button
-        android:text="Logar"
+        android:text="Logar com Facebook"
         android:background="@drawable/screen_border"
         android:backgroundTint="#3B5A9A"
-        android:layout_width="wrap_content"
+
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/radioGroup"
         android:layout_centerHorizontal="true"
