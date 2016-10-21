@@ -27,6 +27,7 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_inicial_consumidor);
 
+        //ABAS COM TABLAYOUT
         //Inicialização de TabLayout e Abas
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("MAPA"));
@@ -83,7 +84,7 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity {
 
 
     }
-/*
+/*      //ABAS COM TABHOST
         tabelas = (TabHost) findViewById(R.id.tabelasConsumidor);
         tabelas.setup();
 
