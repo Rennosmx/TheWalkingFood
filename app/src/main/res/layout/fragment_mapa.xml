@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="imd.ufrn.br.thewalkingfood.FragmentMapa"
+    android:background="#ffe26f">
+
+    <LinearLayout
+        android:id="@+id/tab1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/mapa"
+            android:scaleType="fitXY"
+            />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
