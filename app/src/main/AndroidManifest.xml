@@ -43,17 +43,15 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".ChatScreenActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:parentActivityName=".TelaInicialConsumidorActivity"
-            >
-
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".TelaInicialConsumidorActivity" />
-
         </activity>
-
-
+        <activity
+            android:name=".TelaInformacoesVendedorActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
     </application>
 
 </manifest>

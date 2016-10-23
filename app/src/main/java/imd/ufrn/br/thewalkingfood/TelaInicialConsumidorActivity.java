@@ -4,21 +4,24 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.provider.ContactsContract;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
-public class TelaInicialConsumidorActivity extends AppCompatActivity {
+public class TelaInicialConsumidorActivity extends FragmentActivity {
 
     TabHost tabelas;
     TabHost.TabSpec tb;
     TextView textoVinho, textoBranco;
 
+    FragmentChat fragmentChat;
     ImageView chatSim;
     ImageView mamaProfile;
 
@@ -26,7 +29,7 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_inicial_consumidor);
-
+/*
         //ABAS COM TABLAYOUT
         //Inicialização de TabLayout e Abas
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
@@ -36,15 +39,21 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("FEED"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
+
         //Inicialização ViewPager com Swipe para Fragments
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
+
+
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
+
+
 
             }
 
@@ -58,9 +67,9 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity {
 
             }
         });
-
+*/
         //Erro de nullpointer no findViewById ???
-/*
+
         chatSim = (ImageView) findViewById(R.id.tela_inicial_consumidor_chat1);
         chatSim.setClickable(true);
         chatSim.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +78,7 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity {
                 goToJimmyChat();
             }
         });
-/*
+
         //Erro de nullpointer no findViewById ???
 
         mamaProfile = (ImageView) findViewById(R.id.mama_ImageView);
@@ -80,11 +89,11 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity {
                 goToMamaProfile();
             }
         });
-*/
 
 
-    }
-/*      //ABAS COM TABHOST
+
+
+        //ABAS COM TABHOST
         tabelas = (TabHost) findViewById(R.id.tabelasConsumidor);
         tabelas.setup();
 
@@ -128,6 +137,7 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity {
 
         textoVinho = (TextView) tabelas.getTabWidget().getChildAt(tabelas.getCurrentTab()).findViewById(android.R.id.title);
         textoVinho.setTextColor(Color.parseColor("#A7425C"));
+
     }
 
     @Override
@@ -151,9 +161,10 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity {
             }
         });
     }
-*/
+
     public void goToMamaProfile(){
-        Intent intent = new Intent(TelaInicialConsumidorActivity.this, TelaInicialVendedorActivity.class);
+
+        Intent intent = new Intent(TelaInicialConsumidorActivity.this, TelaInformacoesVendedorActivity.class);
         startActivity(intent);
         finish();
     }
@@ -163,4 +174,6 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+
 }

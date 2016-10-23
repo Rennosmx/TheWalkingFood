@@ -34,10 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
         video = (VideoView) findViewById(R.id.opening_video);
 
-        Uri videouri = Uri.parse("android.resource://" + getPackageName() + "/" + R.drawable.logo);
+        Uri videouri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.logo);
 
         video.setVideoURI(videouri);
-
 
 
         video.setBackgroundColor(Color.parseColor("#ffe26f"));
