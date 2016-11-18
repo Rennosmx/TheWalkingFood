@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <tabs>
+        <tab
+            id="@+id/tab_mapa_nearby"
+            icon="@drawable/ic_foodnearby"
+            barColorWhenSelected="#a7425c"
+            title="Mapa"
+
+            />
+
+        <tab
+            id="@+id/tab_vendedores"
+            icon="@drawable/ic_vendedores_icon"
+            barColorWhenSelected="#a7425c"
+            title="Vendedores"
+
+            />
+        <tab
+            id="@+id/tab_chats"
+            icon="@drawable/ic_chat_icon"
+            barColorWhenSelected="#a7425c"
+            title="Chats"
+
+            />
+        <tab
+            id="@+id/tab_feed"
+            icon="@drawable/ic_feed_icon"
+            barColorWhenSelected="#a7425c"
+            title="Feed"
+
+            />
+    </tabs>
+
+</PreferenceScreen>

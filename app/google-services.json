@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "880890803658",
+    "firebase_url": "https://walkingfood-d5ab2.firebaseio.com",
+    "project_id": "walkingfood-d5ab2",
+    "storage_bucket": "walkingfood-d5ab2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880890803658:android:e6753119f260ac1e",
+        "android_client_info": {
+          "package_name": "imd.ufrn.br.thewalkingfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880890803658-05ado032r7m3dn4p3e1kislj9sgol26e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "imd.ufrn.br.thewalkingfood",
+            "certificate_hash": "D40534FF7ADF049651818D4DEA39CF41EA383C34"
+          }
+        },
+        {
+          "client_id": "880890803658-1vfki0so2ovngg51bf2od26a4a105cp3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXxHjZkWxSdk1oBy3huLCDBRMCTerhEuE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880890803658-1vfki0so2ovngg51bf2od26a4a105cp3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -20,7 +20,7 @@ public class CadastroVendedorActivity extends AppCompatActivity {
     }
 
     public void finalizarCadastro(View view) {
-        Intent intent = new Intent(this, TelaInicialVendedorActivity.class);
+        Intent intent = new Intent(this, VendedorActivity.class);
         startActivity(intent);
         finish();
     }

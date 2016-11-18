@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="#ffe26f"
+
+    >
+
+    <RelativeLayout
+        android:id="@+id/item_lista_vendedores_RelativeLayoutA"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/item_lista_vendedores_ImageViewA"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            />
+
+        <TextView
+            android:id="@+id/item_lista_vendedores_number_TextViewA"
+            android:layout_below="@+id/item_lista_vendedores_ImageViewA"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/item_lista_vendedores_distance_TextViewA"
+            android:layout_below="@+id/item_lista_vendedores_number_TextViewA"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            />
+
+        <Button
+            android:id="@+id/item_lista_vendedores_buttonA"
+            android:layout_below="@+id/item_lista_vendedores_distance_TextViewA"
+
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:textColor="#ffffff"
+            android:text="Pedir"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/pedir_button_shape"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/item_lista_vendedores_RelativeLayoutB"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/item_lista_vendedores_ImageViewB"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            />
+
+        <TextView
+            android:id="@+id/item_lista_vendedores_number_TextViewB"
+            android:layout_below="@+id/item_lista_vendedores_ImageViewB"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/item_lista_vendedores_distance_TextViewB"
+            android:layout_below="@+id/item_lista_vendedores_number_TextViewB"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            />
+
+        <Button
+            android:id="@+id/item_lista_vendedores_buttonB"
+            android:layout_below="@+id/item_lista_vendedores_distance_TextViewB"
+
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:textColor="#ffffff"
+            android:text="Pedir"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/pedir_button_shape"
+            />
+
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>
