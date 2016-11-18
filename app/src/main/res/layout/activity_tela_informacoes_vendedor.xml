@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_tela_inicial_ambulante"
+    android:id="@+id/activity_informacoes_vendedor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/planodefundo_padrao"
-    tools:context="imd.ufrn.br.thewalkingfood.TelaInicialVendedorActivity">
+    tools:context="imd.ufrn.br.thewalkingfood.TelaInformacoesVendedorActivity">
 
     <android.support.v7.widget.Toolbar
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -62,7 +62,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:background="#A7425C"
-                android:tabStripEnabled="false"/>
+                android:tabStripEnabled="false"
+                />
 
             <FrameLayout
                 android:id="@android:id/tabcontent"
@@ -72,17 +73,29 @@
                 android:layout_above="@android:id/tabs">
 
                 <LinearLayout
-                    android:id="@+id/tabPedidos"
+                    android:id="@+id/tab1"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/mama_menu"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/mama_produto"
+                        />
 
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tabChatVendedor"
+                    android:id="@+id/tab2"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -158,7 +171,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tabFeedVendedor"
+                    android:id="@+id/tab3"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -169,5 +182,6 @@
             </FrameLayout>
         </RelativeLayout>
     </TabHost>
+
 
 </RelativeLayout>

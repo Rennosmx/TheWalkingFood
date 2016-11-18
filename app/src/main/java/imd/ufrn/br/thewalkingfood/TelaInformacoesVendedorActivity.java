@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.TabHost;
 import android.widget.TextView;
 
-public class TelaInicialVendedorActivity extends AppCompatActivity {
+public class TelaInformacoesVendedorActivity extends AppCompatActivity {
 
     TabHost tabelas;
     TabHost.TabSpec tb;
@@ -16,29 +16,28 @@ public class TelaInicialVendedorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_inicial_vendedor);
+        setContentView(R.layout.activity_tela_informacoes_vendedor);
 
         tabelas = (TabHost) findViewById(R.id.tabelasAmbulante);
         tabelas.setup();
 
-        //Inclusão de abas no TabHost de Vendedor
-        tb = tabelas.newTabSpec("PEDIDOS");
-        tb.setContent(R.id.tabPedidos);
-        tb.setIndicator("PEDIDOS");
+        //Inclusão de abas no TabHost
+        tb = tabelas.newTabSpec("PRODUTOS");
+        tb.setContent(R.id.tab1);
+        tb.setIndicator("PRODUTOS");
         tabelas.addTab(tb);
 
         tb = tabelas.newTabSpec("CHAT");
-        tb.setContent(R.id.tabChatVendedor);
+        tb.setContent(R.id.tab2);
         tb.setIndicator("CHAT");
         tabelas.addTab(tb);
 
         tb = tabelas.newTabSpec("FEED");
-        tb.setContent(R.id.tabFeedVendedor);
+        tb.setContent(R.id.tab3);
         tb.setIndicator("FEED");
         tabelas.addTab(tb);
 
-
-        //Coloração Inicial da Aba selecionada por padrão(PEDIDOS)
+        //Coloração Inicial da Aba selecionada por padrão(MAPA)
         tabelas.getTabWidget().getChildAt(tabelas.getCurrentTab()).setBackgroundColor(Color.parseColor("#FFFFFF"));
 
         textoVinho = (TextView) tabelas.getTabWidget().getChildAt(tabelas.getCurrentTab()).findViewById(android.R.id.title);
@@ -65,7 +64,6 @@ public class TelaInicialVendedorActivity extends AppCompatActivity {
                 textoVinho.setTextColor(Color.parseColor("#A7425C"));
             }
         });
-
     }
 
     @Override
@@ -77,8 +75,10 @@ public class TelaInicialVendedorActivity extends AppCompatActivity {
     }
 
     public void goToTelaInicialConsumidor(){
-        Intent intent = new Intent(TelaInicialVendedorActivity.this, TelaInicialConsumidorActivity.class);
+        Intent intent = new Intent(TelaInformacoesVendedorActivity.this, TelaInicialConsumidorActivity.class);
         startActivity(intent);
         finish();
+
     }
+
 }
