@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="imd.ufrn.br.thewalkingfood.ListaVendedoresFragment"
-    android:background="#000000"
+    android:background="#ffe26f"
     >
 
     <ListView

@@ -13,6 +13,8 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import imd.ufrn.br.thewalkingfood.ListObject.DuplaVendedor;
+
 
 public class ListaVendedoresFragment extends Fragment {
 
@@ -50,11 +52,24 @@ public class ListaVendedoresFragment extends Fragment {
         distanceList.add("5");
         distanceList.add("10");
 
+        //GET DATA FROM FIREBASE AND POPULATE THE FREAKING LIST
+        //////////////////////////////////////////////////////////////////////
 
+
+
+
+
+
+        ///////////////////////////////////////////////////////////////////
+        DuplaVendedor v = new DuplaVendedor(idsList.get(0), photourlList.get(0), numbersList.get(0), distanceList.get(0), idsList.get(1), photourlList.get(1), numbersList.get(1), distanceList.get(1));
+
+        ArrayList<DuplaVendedor> vendedores = new ArrayList<DuplaVendedor>();
+
+        vendedores.add(v);
 
         View frag = inflater.inflate(R.layout.fragment_lista_vendedores, container, false);
 
-        ListAdapterVendedores adapter = new ListAdapterVendedores(frag.getContext(), idsList, photourlList, numbersList, distanceList );
+        ListAdapterVendedores adapter = new ListAdapterVendedores(this.getContext(),vendedores );
 
 
 

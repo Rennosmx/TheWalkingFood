@@ -28,6 +28,8 @@
             android:layout_marginTop="3dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#a7425c"
             android:layout_centerHorizontal="true"
             />
 
@@ -37,6 +39,8 @@
             android:layout_marginTop="3dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#a7425c"
             android:layout_centerHorizontal="true"
             />
 
@@ -44,11 +48,11 @@
             android:id="@+id/item_lista_vendedores_buttonA"
             android:layout_below="@+id/item_lista_vendedores_distance_TextViewA"
 
-            android:layout_width="80dp"
-            android:layout_height="30dp"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
             android:textColor="#ffffff"
             android:text="Pedir"
-            android:textSize="15sp"
+            android:textSize="10sp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/pedir_button_shape"
             />
@@ -77,6 +81,8 @@
             android:layout_marginTop="3dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#a7425c"
             android:layout_centerHorizontal="true"
             />
 
@@ -86,6 +92,8 @@
             android:layout_marginTop="3dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#a7425c"
             android:layout_centerHorizontal="true"
             />
 
@@ -93,13 +101,16 @@
             android:id="@+id/item_lista_vendedores_buttonB"
             android:layout_below="@+id/item_lista_vendedores_distance_TextViewB"
 
-            android:layout_width="80dp"
-            android:layout_height="30dp"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+
+            android:layout_marginBottom="5dp"
             android:textColor="#ffffff"
             android:text="Pedir"
-            android:textSize="15sp"
+            android:textSize="10sp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/pedir_button_shape"
+
             />
 
 
