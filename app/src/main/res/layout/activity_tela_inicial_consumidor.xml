@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
 
     android:background="#ffe26f"
-    tools:context="imd.ufrn.br.thewalkingfood.TelaInicialConsumidorActivity">
+    tools:context="imd.ufrn.br.thewalkingfood.Cliente.TelaInicialConsumidorActivity">
 
 
 

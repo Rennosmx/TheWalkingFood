@@ -1,9 +1,12 @@
-package imd.ufrn.br.thewalkingfood;
+package imd.ufrn.br.thewalkingfood.Cadastro;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import imd.ufrn.br.thewalkingfood.R;
+import imd.ufrn.br.thewalkingfood.VendedorActivity;
 
 public class CadastroVendedorActivity extends AppCompatActivity {
 

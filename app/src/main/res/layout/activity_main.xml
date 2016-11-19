@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#ffe26f"
-    tools:context="imd.ufrn.br.thewalkingfood.MainActivity">
+    tools:context="imd.ufrn.br.thewalkingfood.Common.MainActivity">
 
 
     <VideoView

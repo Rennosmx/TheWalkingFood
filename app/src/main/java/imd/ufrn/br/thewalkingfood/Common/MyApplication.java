@@ -1,4 +1,4 @@
-package imd.ufrn.br.thewalkingfood;
+package imd.ufrn.br.thewalkingfood.Common;
 
 import android.app.Application;
 import android.content.pm.PackageInfo;

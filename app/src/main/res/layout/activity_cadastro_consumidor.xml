@@ -11,7 +11,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/planodefundo_padrao"
-    tools:context="imd.ufrn.br.thewalkingfood.CadastroConsumidorActivity">
+    tools:context="imd.ufrn.br.thewalkingfood.Cadastro.CadastroConsumidorActivity">
 
     <ImageView
         android:id="@+id/cadastro_consumidor_ImageView"

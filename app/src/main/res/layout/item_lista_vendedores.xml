@@ -13,13 +13,14 @@
         android:layout_width="0dp"
         android:layout_height="match_parent">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/item_lista_vendedores_ImageViewA"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
+
             />
 
         <TextView
@@ -51,7 +52,7 @@
             android:layout_width="60dp"
             android:layout_height="20dp"
             android:textColor="#ffffff"
-            android:text="Pedir"
+            android:text="Detalhes"
             android:textSize="10sp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/pedir_button_shape"
@@ -66,7 +67,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/item_lista_vendedores_ImageViewB"
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -106,7 +107,7 @@
 
             android:layout_marginBottom="5dp"
             android:textColor="#ffffff"
-            android:text="Pedir"
+            android:text="Detalhes"
             android:textSize="10sp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/pedir_button_shape"

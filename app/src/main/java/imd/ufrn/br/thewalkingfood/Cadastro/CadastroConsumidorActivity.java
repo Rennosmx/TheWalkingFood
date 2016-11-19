@@ -1,4 +1,4 @@
-package imd.ufrn.br.thewalkingfood;
+package imd.ufrn.br.thewalkingfood.Cadastro;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -19,6 +19,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import imd.ufrn.br.thewalkingfood.R;
+import imd.ufrn.br.thewalkingfood.Cliente.TelaInicialConsumidorActivity;
 
 
 public class CadastroConsumidorActivity extends AppCompatActivity {

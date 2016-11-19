@@ -1,4 +1,4 @@
-package imd.ufrn.br.thewalkingfood;
+package imd.ufrn.br.thewalkingfood.Common;
 
 
 
@@ -9,7 +9,6 @@ import android.content.pm.Signature;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -27,6 +26,8 @@ import com.google.firebase.auth.FirebaseUser;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Random;
+
+import imd.ufrn.br.thewalkingfood.R;
 
 
 public class MainActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package imd.ufrn.br.thewalkingfood;
+package imd.ufrn.br.thewalkingfood.Common;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -26,6 +24,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import imd.ufrn.br.thewalkingfood.Cadastro.CadastroConsumidorActivity;
+import imd.ufrn.br.thewalkingfood.Cadastro.CadastroVendedorActivity;
+import imd.ufrn.br.thewalkingfood.R;
 
 
 public class SelecaoPerfilActivity extends AppCompatActivity {
@@ -141,6 +143,8 @@ public class SelecaoPerfilActivity extends AppCompatActivity {
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+                int statusCode = result.getStatus().getStatusCode();
+            Log.d("ERRO DE SIGN IN", "ERROR CODE:" + String.valueOf(statusCode));
             handleSignInResult(result);
         }
     }

@@ -1,4 +1,4 @@
-package imd.ufrn.br.thewalkingfood;
+package imd.ufrn.br.thewalkingfood.ListObject;
 
 import android.app.Activity;
 import android.content.Context;
@@ -19,8 +19,10 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import imd.ufrn.br.thewalkingfood.ListObject.DuplaVendedor;
 import imd.ufrn.br.thewalkingfood.ListObject.Vendedor;
+import imd.ufrn.br.thewalkingfood.R;
 
 /**
  * Created by Kamilla on 11/18/2016.
@@ -37,19 +39,19 @@ public class ListAdapterVendedores extends BaseAdapter {
         super();
         this.context = _context;
 
-        this.vendedores = _vendedores;
+        vendedores = new ArrayList<DuplaVendedor>(_vendedores);
 
     }
 
     private class ViewHolder {
         RelativeLayout itemA;
-        ImageView imageViewA;
+        CircleImageView imageViewA;
         TextView numberTextViewA;
         TextView distanceTextViewA;
         Button buttonA;
 
         RelativeLayout itemB;
-        ImageView imageViewB;
+        CircleImageView imageViewB;
         TextView numberTextViewB;
         TextView distanceTextViewB;
         Button buttonB;
@@ -83,13 +85,13 @@ public class ListAdapterVendedores extends BaseAdapter {
             view = mInflater.inflate(R.layout.item_lista_vendedores, null);
 
             holder = new ViewHolder();
-            holder.imageViewA = (ImageView) view.findViewById(R.id.item_lista_vendedores_ImageViewA);
+            holder.imageViewA = (CircleImageView) view.findViewById(R.id.item_lista_vendedores_ImageViewA);
             holder.numberTextViewA = (TextView) view.findViewById(R.id.item_lista_vendedores_number_TextViewA);
             holder.distanceTextViewA = (TextView) view.findViewById(R.id.item_lista_vendedores_distance_TextViewA);
             holder.buttonA = (Button) view.findViewById(R.id.item_lista_vendedores_buttonA);
 
 
-            holder.imageViewB = (ImageView) view.findViewById(R.id.item_lista_vendedores_ImageViewB);
+            holder.imageViewB = (CircleImageView) view.findViewById(R.id.item_lista_vendedores_ImageViewB);
             holder.numberTextViewB = (TextView) view.findViewById(R.id.item_lista_vendedores_number_TextViewB);
             holder.distanceTextViewB = (TextView) view.findViewById(R.id.item_lista_vendedores_distance_TextViewB);
             holder.buttonB = (Button) view.findViewById(R.id.item_lista_vendedores_buttonB);
@@ -103,14 +105,18 @@ public class ListAdapterVendedores extends BaseAdapter {
 
         Glide.with(context).load(vendedores.get(i).getPhotourlA()).centerCrop().into(holder.imageViewA);
         holder.numberTextViewA.setText(vendedores.get(i).getNumberA());
-        holder.distanceTextViewA.setText(vendedores.get(i).getNumberB());
+        holder.distanceTextViewA.setText(vendedores.get(i).getDistanceA());
 
-        Glide.with(context).load(vendedores.get(i).getPhotourlB()).centerCrop().into(holder.imageViewB);
-        holder.numberTextViewA.setText(vendedores.get(i).getNumberB());
-        holder.distanceTextViewA.setText(vendedores.get(i).getNumberB());
+
+
 
         if(vendedores.get(i).getIdB() == null){
             holder.buttonB.setVisibility(View.INVISIBLE);
+        }
+        else {
+            Glide.with(context).load(vendedores.get(i).getPhotourlB()).centerCrop().into(holder.imageViewB);
+            holder.numberTextViewB.setText(vendedores.get(i).getNumberB());
+            holder.distanceTextViewB.setText(vendedores.get(i).getDistanceB());
         }
         /*
 

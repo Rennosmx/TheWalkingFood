@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "880890803658-9t7f46gal39osi77qom05s9d443t58eh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "imd.ufrn.br.thewalkingfood",
+            "certificate_hash": "F27CAFAE7F416A67397A67B547EE813D75B4D067"
+          }
+        },
+        {
           "client_id": "880890803658-05ado032r7m3dn4p3e1kislj9sgol26e.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

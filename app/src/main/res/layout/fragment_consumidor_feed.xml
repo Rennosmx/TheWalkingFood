@@ -2,14 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="imd.ufrn.br.thewalkingfood.Cliente.Fragments.ListaVendedoresFragment"
     android:background="#ffe26f"
-    >
+    tools:context="imd.ufrn.br.thewalkingfood.Cliente.Fragments.ConsumidorFeedFragment">
 
     <ListView
-        android:id="@+id/fragment_lista_vendedores_ListView"
+        android:id="@+id/consumidor_feed_fragment_ListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
 
     </ListView>
 

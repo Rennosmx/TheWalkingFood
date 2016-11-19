@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import imd.ufrn.br.thewalkingfood.Cliente.TelaInicialConsumidorActivity;
+
 public class TelaInicialVendedorActivity extends AppCompatActivity {
 
     TabHost tabelas;

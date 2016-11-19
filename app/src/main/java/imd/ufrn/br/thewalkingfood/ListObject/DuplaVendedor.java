@@ -16,10 +16,14 @@ public class DuplaVendedor {
     private String numberB;
     private String distanceB;
 
+    private Vendedor A;
+    private Vendedor B;
+
 
     public DuplaVendedor(){
 
     }
+
 
     public DuplaVendedor(String _idA, String _photourlA, String _numberA, String _distanceA, String _idB, String _photourlB, String _numberB, String _distanceB){
 
@@ -32,6 +36,19 @@ public class DuplaVendedor {
         this.photourlB = _photourlB;
         this.numberB = _numberB;
         this.distanceB = _distanceB;
+    }
+
+    public DuplaVendedor(Vendedor A, Vendedor B){
+
+        this.idA = A.getId();
+        this.photourlA = A.getPhotourl();
+        this.numberA = A.getNumber();
+        this.distanceA = A.getDistance();
+
+        this.idB = B.getId();
+        this.photourlB = B.getPhotourl();
+        this.numberB = B.getNumber();
+        this.distanceB = B.getDistance();
     }
 
 

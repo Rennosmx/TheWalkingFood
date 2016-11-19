@@ -1,4 +1,4 @@
-package imd.ufrn.br.thewalkingfood;
+package imd.ufrn.br.thewalkingfood.Cadastro;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import imd.ufrn.br.thewalkingfood.R;
 
 public class CadastroProdutoActivity extends AppCompatActivity {
 

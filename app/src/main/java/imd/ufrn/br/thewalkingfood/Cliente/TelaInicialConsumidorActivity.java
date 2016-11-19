@@ -1,20 +1,11 @@
-package imd.ufrn.br.thewalkingfood;
+package imd.ufrn.br.thewalkingfood.Cliente;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.provider.ContactsContract;
 import android.support.annotation.IdRes;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TabHost;
-import android.widget.TextView;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -22,16 +13,24 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
+import imd.ufrn.br.thewalkingfood.ChatScreenActivity;
+import imd.ufrn.br.thewalkingfood.Cliente.Fragments.ConsumidorFeedFragment;
+import imd.ufrn.br.thewalkingfood.Cliente.Fragments.ListaVendedoresFragment;
+import imd.ufrn.br.thewalkingfood.R;
+import imd.ufrn.br.thewalkingfood.TelaInicialVendedorActivity;
+
 public class TelaInicialConsumidorActivity extends AppCompatActivity implements OnMapReadyCallback{
 
     private BottomBar bottomBar;
 
 
 
-    private TelaInicialConsumidorMapaFragment mapaFragment;
+
     private ListaVendedoresFragment vendedoresFragment;
 
     private SupportMapFragment mapFragment;
+
+    private ConsumidorFeedFragment consumidorFeedFragment;
 
 
     @Override
@@ -39,17 +38,17 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_inicial_consumidor);
 
-        mapaFragment = new TelaInicialConsumidorMapaFragment();
+
         vendedoresFragment = new ListaVendedoresFragment();
 
 
         mapFragment = SupportMapFragment.newInstance();
 
-
+        consumidorFeedFragment = new ConsumidorFeedFragment();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         final FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.tela_inicial_consumidor_BottomBarContainer, mapaFragment);
+        fragmentTransaction.add(R.id.tela_inicial_consumidor_BottomBarContainer, mapFragment);
         fragmentTransaction.commit();
 
 
@@ -72,7 +71,7 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements 
 
                 }
                 else if(tabId == R.id.tab_feed){
-
+                    fragmentTransaction1.replace(R.id.tela_inicial_consumidor_BottomBarContainer, consumidorFeedFragment);
                 }
                 fragmentTransaction1.addToBackStack(null);
                 fragmentTransaction1.commit();

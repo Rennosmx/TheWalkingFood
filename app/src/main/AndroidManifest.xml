@@ -18,7 +18,7 @@
             android:value="@string/google_maps_api_key" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Common.MainActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,30 +27,30 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SelecaoPerfilActivity"
+            android:name=".Common.SelecaoPerfilActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".CadastroVendedorActivity"
+            android:name=".Cadastro.CadastroVendedorActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".CadastroConsumidorActivity"
+            android:name=".Cadastro.CadastroConsumidorActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".CadastroProdutoActivity"
+            android:name=".Cadastro.CadastroProdutoActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".TelaInicialConsumidorActivity"
+            android:name=".Cliente.TelaInicialConsumidorActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".TelaInicialVendedorActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".ChatScreenActivity"
-            android:parentActivityName=".TelaInicialConsumidorActivity"
+            android:parentActivityName=".Cliente.TelaInicialConsumidorActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".TelaInicialConsumidorActivity" />
+                android:value=".Cliente.TelaInicialConsumidorActivity" />
         </activity>
         <activity
             android:name=".VendedorActivity"
