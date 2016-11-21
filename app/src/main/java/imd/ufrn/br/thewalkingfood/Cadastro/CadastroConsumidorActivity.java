@@ -56,7 +56,8 @@ public class CadastroConsumidorActivity extends AppCompatActivity {
         firebaseUser = firebaseAuth.getCurrentUser();
 
 
-
+        //Create a reference to the user Node, in this case the user will be a Consumidor, then its data will
+        //be stored under Users/Consumidor Node. And its Identifier will be the Unique Id provided by FirebaseUser
         databaseReference = firebaseDatabase.getReference().child("Users").child("Consumidor").child(firebaseUser.getUid());
 
         userNameEditText = (EditText) findViewById(R.id.cadastro_consumidor_EditText_Nome);
@@ -74,7 +75,9 @@ public class CadastroConsumidorActivity extends AppCompatActivity {
             }
         });
 
-
+        //Create a ValueEventListener. Will be added to the databaseReference. dataShapshot corresponds to the user Node
+        // and with that we can write and read from it. In this case we are reading, since its name and photo-url was already
+        //set on the previous Activity (SelecaoPerfilActivity)
         ValueEventListener dataListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -95,14 +98,8 @@ public class CadastroConsumidorActivity extends AppCompatActivity {
             }
         };
 
-        databaseReference.addValueEventListener(dataListener);
-
-
-
-
-
-
-
+        //Adding Listener to the reference. If this isn't done, nothing happens
+        databaseReference.addListenerForSingleValueEvent(dataListener);
 
 
 
@@ -111,6 +108,7 @@ public class CadastroConsumidorActivity extends AppCompatActivity {
 
 
     public void onCadastrarClick(){
+        //Check if Number is empty asks for user to put it
         if(userNumberEditText.getText().toString() == null){
             Toast.makeText(CadastroConsumidorActivity.this, "Insira Seu Número",
                     Toast.LENGTH_SHORT).show();
@@ -122,6 +120,7 @@ public class CadastroConsumidorActivity extends AppCompatActivity {
             username = userNameEditText.getText().toString();
             usernumber = userNumberEditText.getText().toString();
 
+            //Set values of nome and numero at the databaseReference
             databaseReference.child("nome").setValue(username);
             databaseReference.child("numero").setValue(usernumber);
 
@@ -133,6 +132,7 @@ public class CadastroConsumidorActivity extends AppCompatActivity {
         Uri uri1 = Uri.parse(url);
 
         //Picasso.with(this).load("\"https://lh6.googleusercontent.com/-t9kWaYYhDTs/AAAAAAAAAAI/AAAAAAAAAAA/AKTaeK-TFvX7boI-PhySCesDH24bISiatQ/s96-c/photo.jpg\"").into(userImageView);
+        //Loads the image from the url provided into the ImageView
         Glide.with(this).load(uri1).centerCrop().into(userImageView);
 
     }
@@ -143,4 +143,6 @@ public class CadastroConsumidorActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+
 }

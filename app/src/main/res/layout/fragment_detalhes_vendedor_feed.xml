@@ -1,0 +1,31 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffe26f"
+    tools:context="imd.ufrn.br.thewalkingfood.Cliente.Fragments.DetalhesVendedorFeedFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/fragment_detalhes_vendedor_feed_listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/fragment_detalhes_vendedor_feed_subscribeButton"
+            ></ListView>
+
+        <Button
+            android:id="@+id/fragment_detalhes_vendedor_feed_subscribeButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:text="SEGUIR"
+            />
+
+    </RelativeLayout>
+
+
+</FrameLayout>

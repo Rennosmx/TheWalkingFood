@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_cadastro_ambulante"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_vendedor_edit_produto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -9,14 +10,21 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#ffe26f"
-    tools:context="imd.ufrn.br.thewalkingfood.Cadastro.CadastroVendedorActivity">
+    tools:context="imd.ufrn.br.thewalkingfood.Vendedor.VendedorEditProdutoActivity">
+
+    <ProgressBar
+        android:id="@+id/vendedor_edit_produto_ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        />
 
     <ImageView
-        android:id="@+id/cadastro_vendedor_ImageView"
+        android:id="@+id/vendedor_edit_produto_ImageView"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="60dp"
-        android:src="@drawable/profile_icon"
+        android:src="@drawable/icon_food"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         />
@@ -24,7 +32,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/cadastro_vendedor_ImageView"
+        android:layout_below="@+id/vendedor_edit_produto_ImageView"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="40dp"
@@ -33,10 +41,9 @@
 
 
         <LinearLayout
-            android:id="@+id/cadastro_vendedor_NameBoxes"
+            android:id="@+id/vendedor_edit_produto_NameBoxes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:orientation="horizontal"
             >
 
@@ -46,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:text="Nome:"
                 android:layout_marginTop="5dp"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="#A7425C"
                 />
 
@@ -58,10 +65,10 @@
                 >
 
                 <EditText
-                    android:id="@+id/cadastro_vendedor_EditText_Nome"
+                    android:id="@+id/vendedor_edit_produto_EditText_Nome"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="25dp"
 
                     android:textColor="#484848"
                     android:background="#ffe26f"
@@ -69,7 +76,7 @@
                     />
 
                 <LinearLayout
-                    android:layout_below="@+id/cadastro_vendedor_EditText_Nome"
+                    android:layout_below="@+id/vendedor_edit_produto_EditText_Nome"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#A7425C"></LinearLayout>
@@ -80,8 +87,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/cadastro_vendedor_NumberBoxes"
-            android:layout_below="@+id/cadastro_vendedor_NameBoxes"
+            android:id="@+id/vendedor_edit_produto_PrecoBoxes"
+            android:layout_below="@+id/vendedor_edit_produto_NameBoxes"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -92,9 +99,9 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Numero:"
+                android:text="Preço:"
                 android:layout_marginTop="5dp"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="#A7425C"
                 />
 
@@ -106,18 +113,18 @@
                 >
 
                 <EditText
-                    android:id="@+id/cadastro_vendedor_EditText_Numero"
+                    android:id="@+id/vendedor_edit_produto_EditText_Preco"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="25dp"
 
                     android:textColor="#484848"
                     android:background="#ffe26f"
                     android:textSize="20sp"
-                    android:inputType="numberSigned" />
+                    android:inputType="numberDecimal" />
 
                 <LinearLayout
-                    android:layout_below="@+id/cadastro_vendedor_EditText_Numero"
+                    android:layout_below="@+id/vendedor_edit_produto_EditText_Preco"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#A7425C"></LinearLayout>
@@ -129,7 +136,56 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_below="@+id/cadastro_vendedor_NumberBoxes"
+            android:id="@+id/vendedor_edit_produto_categoriaBoxes"
+            android:layout_below="@+id/vendedor_edit_produto_PrecoBoxes"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Categoria:"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
+                android:textColor="#A7425C"
+                />
+
+            <RelativeLayout
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#ffe26f"
+                >
+
+                <EditText
+                    android:id="@+id/vendedor_edit_produto_EditText_Categoria"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+
+                    android:textColor="#484848"
+                    android:background="#ffe26f"
+                    android:textSize="20sp"
+                    />
+
+                <LinearLayout
+                    android:layout_below="@+id/vendedor_edit_produto_EditText_Categoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#A7425C"></LinearLayout>
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@+id/vendedor_edit_produto_categoriaBoxes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -141,12 +197,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Descrição: "
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="#A7425C"
                 />
 
             <EditText
-                android:id="@+id/cadastro_vendedor_descricaoEditText"
+                android:id="@+id/vendedor_edit_produto_descricaoEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -163,16 +219,47 @@
 
 
 
+
     <Button
-        android:text="Cadastrar"
+        android:text="Salvar"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:id="@+id/cadastro_vendedor_Button"
+        android:id="@+id/vendedor_edit_produto_Button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#A7425C"
+        android:background="@drawable/screen_border"
+        />
+
+    <Button
+        android:text="Remover Produto"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/vendedor_edit_produto_removerButton"
+        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:backgroundTint="#A7425C"
         android:background="@drawable/screen_border"
         />
 
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/vendedor_edit_produto_editPhotoButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        fancy:fb_iconResource="@drawable/icon_edit"
+        fancy:fb_defaultColor="#ff8800"
+        fancy:fb_iconPaddingLeft="0dp"
+        fancy:fb_iconPaddingRight="0dp"
+        fancy:fb_focusColor="#313131"
+        fancy:fb_fontIconSize="50sp"
+        fancy:fb_radius="40dp"
+        android:layout_alignRight="@+id/vendedor_edit_produto_ImageView"
+        android:layout_alignBottom="@+id/vendedor_edit_produto_ImageView"
+
+        android:layout_marginBottom="10dp"
+
+        />
 
 </RelativeLayout>

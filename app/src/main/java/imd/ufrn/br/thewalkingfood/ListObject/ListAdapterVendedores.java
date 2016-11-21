@@ -2,24 +2,31 @@ package imd.ufrn.br.thewalkingfood.ListObject;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import imd.ufrn.br.thewalkingfood.Cliente.TelaDetalhesVendedorActivity;
 import imd.ufrn.br.thewalkingfood.ListObject.DuplaVendedor;
 import imd.ufrn.br.thewalkingfood.ListObject.Vendedor;
 import imd.ufrn.br.thewalkingfood.R;
@@ -33,6 +40,9 @@ public class ListAdapterVendedores extends BaseAdapter {
     Context context;
     LayoutInflater layoutInflater;
     ArrayList<DuplaVendedor>  vendedores;
+    String extra;
+    String idConsumidor;
+
     int auxi;
 
     public ListAdapterVendedores(Context _context, ArrayList<DuplaVendedor> _vendedores ) {
@@ -81,6 +91,12 @@ public class ListAdapterVendedores extends BaseAdapter {
 
         LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
 
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+
+        idConsumidor = firebaseUser.getUid();
+
         if(view == null){
             view = mInflater.inflate(R.layout.item_lista_vendedores, null);
 
@@ -102,14 +118,29 @@ public class ListAdapterVendedores extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
 
-
+        auxi = i;
+        extra = vendedores.get(i).getIdA();
         Glide.with(context).load(vendedores.get(i).getPhotourlA()).centerCrop().into(holder.imageViewA);
         holder.numberTextViewA.setText(vendedores.get(i).getNumberA());
         holder.distanceTextViewA.setText(vendedores.get(i).getDistanceA());
+        holder.buttonA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ListView listView = (ListView) view.getParent().getParent().getParent();
+                int position = listView.getPositionForView(view);
+
+                Log.d("VIEW", view.getParent().getParent().getParent().toString());
+                extra = vendedores.get(position).getIdA();
+
+                goToDetalhesVendedor(extra, idConsumidor);
+            }
+        });
 
 
 
 
+        auxi = i;
+        extra = vendedores.get(i).getIdB();
         if(vendedores.get(i).getIdB() == null){
             holder.buttonB.setVisibility(View.INVISIBLE);
         }
@@ -117,6 +148,19 @@ public class ListAdapterVendedores extends BaseAdapter {
             Glide.with(context).load(vendedores.get(i).getPhotourlB()).centerCrop().into(holder.imageViewB);
             holder.numberTextViewB.setText(vendedores.get(i).getNumberB());
             holder.distanceTextViewB.setText(vendedores.get(i).getDistanceB());
+            holder.buttonB.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    ListView listView = (ListView) view.getParent().getParent().getParent();
+                    int position = listView.getPositionForView(view);
+
+                    Log.d("VIEW", view.getParent().getParent().getParent().toString());
+
+                    extra = vendedores.get(position).getIdB();
+                    goToDetalhesVendedor(extra, idConsumidor);
+                }
+            });
         }
         /*
 
@@ -161,4 +205,13 @@ public class ListAdapterVendedores extends BaseAdapter {
 
         return view;
     }
+
+    public void goToDetalhesVendedor(String id, String idC){
+        Intent intent = new Intent(context, TelaDetalhesVendedorActivity.class);
+        intent.putExtra("idVendedor", id);
+        intent.putExtra("idConsumidor", idC);
+        context.startActivity(intent);
+    }
+
+
 }

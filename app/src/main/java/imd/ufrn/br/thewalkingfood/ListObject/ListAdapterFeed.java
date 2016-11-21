@@ -83,7 +83,7 @@ public class ListAdapterFeed extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
 
-        Glide.with(context).load(feeds.get(i).getPhotourl()).centerCrop().into(holder.imageView);
+        Glide.with(context).load(feeds.get(i).getPhotourl()).override(400,400).centerCrop().into(holder.imageView);
         holder.feedTextView.setText(feeds.get(i).getFeedText());
         holder.dateTextView.setText(feeds.get(i).getFeedDate());
 

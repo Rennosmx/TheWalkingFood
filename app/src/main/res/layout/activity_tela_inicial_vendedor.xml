@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_tela_inicial_ambulante"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/planodefundo_padrao"
-    tools:context="imd.ufrn.br.thewalkingfood.TelaInicialVendedorActivity">
+    tools:context="imd.ufrn.br.thewalkingfood.Vendedor.TelaInicialVendedorActivity">
 
     <android.support.v7.widget.Toolbar
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -41,133 +42,32 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <TabHost
-        android:layout_marginTop="40dp"
+
+    <FrameLayout
+        android:id="@+id/tela_inicial_vendedor_BottomBarContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/tabelasAmbulante"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="55dp"
+        >
 
+
+    </FrameLayout>
+
+    <com.roughike.bottombar.BottomBar
+        android:id="@+id/tela_inicial_vendedor_BottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:background="#a7425c"
+        app:bb_tabXmlResource="@xml/bottombar_tabs_tela_inicial_vendedor"
+        app:bb_activeTabColor="#ffe26f"
+        app:bb_inActiveTabColor="#ffffff"
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        app:bb_activeTabAlpha="1"
 
-            <TabWidget
-                android:id="@android:id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:background="#A7425C"
-                android:tabStripEnabled="false"/>
-
-            <FrameLayout
-                android:id="@android:id/tabcontent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_above="@android:id/tabs">
-
-                <LinearLayout
-                    android:id="@+id/tabPedidos"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+        ></com.roughike.bottombar.BottomBar>
 
 
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/tabChatVendedor"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-
-
-                        >
-
-
-                        <ImageView
-                            android:id="@+id/chat_screen_profilestatus_mama"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/mama_chat"
-                            />
-
-                        <ImageView
-                            android:layout_below="@+id/chat_screen_profilestatus_mama"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/chat_simulation"
-                            />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#fdfdfd"
-                            android:layout_alignParentBottom="true"
-                            android:orientation="horizontal"
-                            >
-
-                            <ImageView
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/chat_smile"
-                                />
-
-                            <EditText
-                                android:layout_weight="6"
-                                android:layout_width="0dp"
-                                android:text="Mensagem..."
-                                android:layout_height="wrap_content" />
-
-                            <ImageView
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/chat_mic"
-                                />
-
-                            <ImageView
-                                android:layout_weight="1"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/chat_camera"
-
-                                />
-
-
-                        </LinearLayout>
-
-
-
-
-                    </RelativeLayout>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/tabFeedVendedor"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-
-                </LinearLayout>
-
-            </FrameLayout>
-        </RelativeLayout>
-    </TabHost>
 
 </RelativeLayout>

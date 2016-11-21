@@ -1,0 +1,64 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffe26f"
+    tools:context="imd.ufrn.br.thewalkingfood.Cliente.Fragments.DetalhesVendedorProdutosFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/fragment_detalhes_vendedor_produtos_imageView"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/fragment_detalhes_vendedor_produtos_vendedorTextView"
+                android:layout_width="match_parent"
+                android:textColor="#a7425c"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/fragment_detalhes_vendedor_produtos_imageView"
+                />
+
+            <TextView
+                android:id="@+id/fragment_detalhes_vendedor_produtos_descricaoTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:textColor="#a7425c"
+
+                android:layout_toRightOf="@+id/fragment_detalhes_vendedor_produtos_imageView"
+                android:layout_below="@+id/fragment_detalhes_vendedor_produtos_vendedorTextView"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_weight="4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <ListView
+                android:id="@+id/fragment_detalhes_vendedor_produtos_listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                ></ListView>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

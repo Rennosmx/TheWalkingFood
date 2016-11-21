@@ -1,0 +1,115 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffe26f"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    tools:context="imd.ufrn.br.thewalkingfood.Vendedor.Fragments.VendedorProdutosFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/fragment_vendedor_produtos_addProdutoButton"
+            >
+
+            <RelativeLayout
+                android:layout_margin="20dp"
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/fragment_vendedor_produtos_imageView"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/fragment_vendedor_produtos_vendedorTextView"
+                    android:layout_width="match_parent"
+                    android:textColor="#a7425c"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/fragment_vendedor_produtos_imageView"
+                    />
+
+                <TextView
+                    android:id="@+id/fragment_vendedor_produtos_descricaoTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="#a7425c"
+
+                    android:layout_toRightOf="@+id/fragment_vendedor_produtos_imageView"
+                    android:layout_below="@+id/fragment_vendedor_produtos_vendedorTextView"
+                    />
+
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/fragment_vendedor_produtos_editDescricaoButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    fancy:fb_defaultColor="#ff8800"
+                    fancy:fb_iconPaddingLeft="0dp"
+                    fancy:fb_iconPaddingRight="0dp"
+
+                    fancy:fb_focusColor="#313131"
+                    fancy:fb_iconResource="@drawable/icon_edit"
+                    fancy:fb_fontIconSize="50sp"
+                    fancy:fb_radius="40dp"
+                    android:layout_alignRight="@+id/fragment_vendedor_produtos_descricaoTextView"
+                    android:layout_alignBottom="@+id/fragment_vendedor_produtos_descricaoTextView"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_weight="4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <ListView
+                    android:id="@+id/fragment_vendedor_produtos_listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    ></ListView>
+
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/fragment_vendedor_produtos_addProdutoButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            fancy:fb_iconResource="@drawable/icon_add"
+            fancy:fb_defaultColor="#ff8800"
+            fancy:fb_iconPaddingLeft="0dp"
+            fancy:fb_iconPaddingRight="0dp"
+            fancy:fb_focusColor="#313131"
+            fancy:fb_fontIconSize="50sp"
+            fancy:fb_radius="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            />
+
+
+    </RelativeLayout>
+
+
+
+
+
+</FrameLayout>

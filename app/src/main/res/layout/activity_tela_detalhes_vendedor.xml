@@ -2,12 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_tela_inicial_consumidor"
+    android:id="@+id/activity_tela_detalhes_vendedor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:background="#ffe26f"
-    tools:context="imd.ufrn.br.thewalkingfood.Cliente.TelaInicialConsumidorActivity">
+    tools:context="imd.ufrn.br.thewalkingfood.Cliente.TelaDetalhesVendedorActivity">
 
 
 
@@ -48,7 +47,7 @@
 
 
     <FrameLayout
-        android:id="@+id/tela_inicial_consumidor_BottomBarContainer"
+        android:id="@+id/tela_detalhes_vendedor_BottomBarContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="40dp"
@@ -59,18 +58,20 @@
     </FrameLayout>
 
     <com.roughike.bottombar.BottomBar
-        android:id="@+id/tela_inicial_consumidor_BottomBar"
+        android:id="@+id/tela_detalhes_vendedor_BottomBar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:background="#a7425c"
-        app:bb_tabXmlResource="@xml/bottombar_tabs"
+        app:bb_tabXmlResource="@xml/bottombar_tabs_detalhes_vendedor"
+
         app:bb_activeTabColor="#ffe26f"
         app:bb_inActiveTabColor="#ffffff"
-
         app:bb_activeTabAlpha="1"
 
         ></com.roughike.bottombar.BottomBar>
+
+
 
 
 

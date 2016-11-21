@@ -1,6 +1,7 @@
 package imd.ufrn.br.thewalkingfood.Cliente.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -17,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import imd.ufrn.br.thewalkingfood.Cliente.TelaDetalhesVendedorActivity;
 import imd.ufrn.br.thewalkingfood.ListObject.ListAdapterVendedores;
 import imd.ufrn.br.thewalkingfood.ListObject.DuplaVendedor;
 import imd.ufrn.br.thewalkingfood.ListObject.Vendedor;
@@ -96,8 +98,12 @@ public class ListaVendedoresFragment extends Fragment {
                     aux.setId(dsp.getKey());
                     aux.setPhotourl(dsp.child("photo-url").getValue().toString());
                     aux.setNumber(dsp.child("numero").getValue().toString());
-                    aux.setDistance(dsp.child("distance").getValue().toString());
-
+                    if(dsp.child("distance").exists() == true) {
+                        aux.setDistance(dsp.child("distance").getValue().toString());
+                    }
+                    else {
+                        aux.setDistance("10");
+                    }
                     listaVendedorFB.add(aux);
 
                 }
@@ -164,4 +170,13 @@ public class ListaVendedoresFragment extends Fragment {
         int mod =  m % n ;
         return ( mod < 0 ) ? mod + n : mod;
     }
+
+    public void goToDetalhesVendedor(String id, String idC){
+        Intent intent = new Intent(getActivity(), TelaDetalhesVendedorActivity.class);
+        intent.putExtra("idVendedor", id);
+        intent.putExtra("idConsumidor", idC);
+        startActivity(intent);
+        getActivity().finish();
+    }
+
 }

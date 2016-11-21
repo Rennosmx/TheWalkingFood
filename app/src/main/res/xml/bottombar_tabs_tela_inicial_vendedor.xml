@@ -2,29 +2,22 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <tabs>
         <tab
-            id="@+id/tab_mapa_nearby"
-            icon="@drawable/icon_map_transparent"
-            barColorWhenSelected="#a7425c"
-            title="Mapa"
-
-            />
-
-        <tab
-            id="@+id/tab_vendedores"
+            id="@+id/bottombar_tabs_tela_inicial_vendedor_produtos"
             icon="@drawable/icon_vendedores_transparent"
             barColorWhenSelected="#a7425c"
-            title="Vendedores"
+            title="Produtos"
 
             />
+
         <tab
-            id="@+id/tab_chats"
+            id="@+id/bottombar_tabs_tela_inicial_vendedor_chats"
             icon="@drawable/icon_chat_transparent"
             barColorWhenSelected="#a7425c"
-            title="Chats"
+            title="Chat"
 
             />
         <tab
-            id="@+id/tab_feed"
+            id="@+id/bottombar_tabs_tela_inicial_vendedor_feed"
             icon="@drawable/icon_feed_transparent"
             barColorWhenSelected="#a7425c"
             title="Feed"

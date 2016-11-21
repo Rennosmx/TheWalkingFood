@@ -60,6 +60,9 @@ public class SelecaoPerfilActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
+        //Firebase Authentication Listener. It listens to changes in authentication. When the user logs in, it is called.
+        //We check if the user is logged in, if yes, we save its data to the database based on the option the user choosed
+        // Vendedor or Consumidor.
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
