@@ -147,7 +147,7 @@ public class SelecaoPerfilActivity extends AppCompatActivity {
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
                 int statusCode = result.getStatus().getStatusCode();
-            Log.d("ERRO DE SIGN IN", "ERROR CODE:" + String.valueOf(statusCode));
+            Log.d("ERRO DE SIG N IN", "ERROR CODE:" + String.valueOf(statusCode));
             handleSignInResult(result);
         }
     }
