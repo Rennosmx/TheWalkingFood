@@ -30,17 +30,13 @@ public class CadastroConsumidorActivity extends AppCompatActivity {
     private ImageView userImageView;
     private Button cadastrarButton;
 
-
-
     private FirebaseDatabase firebaseDatabase;
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
     private FirebaseUser firebaseUser;
 
-
     private String name;
     private String uri;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +48,7 @@ public class CadastroConsumidorActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
-
         firebaseUser = firebaseAuth.getCurrentUser();
-
 
         //Create a reference to the user Node, in this case the user will be a Consumidor, then its data will
         //be stored under Users/Consumidor Node. And its Identifier will be the Unique Id provided by FirebaseUser

@@ -28,6 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import imd.ufrn.br.thewalkingfood.Cadastro.CadastroConsumidorActivity;
 import imd.ufrn.br.thewalkingfood.Cadastro.CadastroVendedorActivity;
 import imd.ufrn.br.thewalkingfood.R;
+import mehdi.sakout.fancybuttons.FancyButton;
 
 
 public class SelecaoPerfilActivity extends AppCompatActivity {
@@ -42,6 +43,7 @@ public class SelecaoPerfilActivity extends AppCompatActivity {
 
     RadioButton rbVendedor, rbConsumidor;
     SignInButton signInButton;
+    FancyButton fancyButtonGPlus;
     GoogleApiClient mGoogleApiClient;
     GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener;
 
@@ -55,7 +57,8 @@ public class SelecaoPerfilActivity extends AppCompatActivity {
 
         rbVendedor = (RadioButton)findViewById(R.id.rBtnVendedor);
         rbConsumidor = (RadioButton)findViewById(R.id.rBtnConsumidor);
-        signInButton = (SignInButton) findViewById(R.id.sign_in_button);
+       // signInButton = (SignInButton) findViewById(R.id.sign_in_button);
+        fancyButtonGPlus = (FancyButton) findViewById(R.id.btn_gplus);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
@@ -99,10 +102,16 @@ public class SelecaoPerfilActivity extends AppCompatActivity {
         };
 
 
+        fancyButtonGPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signIn();
+            }
+        });
 
 
 
-
+/*
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,7 +119,7 @@ public class SelecaoPerfilActivity extends AppCompatActivity {
 
             }
         });
-
+*/
         onConnectionFailedListener = new GoogleApiClient.OnConnectionFailedListener() {
             @Override
             public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {

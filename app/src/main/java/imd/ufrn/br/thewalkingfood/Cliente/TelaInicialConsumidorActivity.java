@@ -1,12 +1,20 @@
 package imd.ufrn.br.thewalkingfood.Cliente;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.support.annotation.IdRes;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -18,13 +26,14 @@ import com.roughike.bottombar.OnTabSelectListener;
 import imd.ufrn.br.thewalkingfood.ChatScreenActivity;
 import imd.ufrn.br.thewalkingfood.Cliente.Fragments.ConsumidorFeedFragment;
 import imd.ufrn.br.thewalkingfood.Cliente.Fragments.ListaVendedoresFragment;
+import imd.ufrn.br.thewalkingfood.Manifest;
 import imd.ufrn.br.thewalkingfood.R;
 import imd.ufrn.br.thewalkingfood.Vendedor.TelaInicialVendedorActivity;
 
-public class TelaInicialConsumidorActivity extends AppCompatActivity implements OnMapReadyCallback{
+public class TelaInicialConsumidorActivity extends AppCompatActivity implements
+        OnMapReadyCallback{
 
     private BottomBar bottomBar;
-
 
     private String idConsumidor;
 
@@ -33,7 +42,6 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements 
     private SupportMapFragment mapFragment;
 
     private ConsumidorFeedFragment consumidorFeedFragment;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +65,6 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements 
         //Initialize with this fragment
         fragmentTransaction.add(R.id.tela_inicial_consumidor_BottomBarContainer, mapFragment);
         fragmentTransaction.commit();
-
 
         bottomBar = (BottomBar) findViewById(R.id.tela_inicial_consumidor_BottomBar);
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
@@ -86,6 +93,8 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements 
         });
 
         mapFragment.getMapAsync(this);
+
+
     }
 
     @Override
@@ -109,7 +118,12 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements 
     // Everything that has to be done with the map fragment, is done in this function onMapReady
     @Override
     public void onMapReady(GoogleMap googleMap) {
-
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            googleMap.setMyLocationEnabled(true);
+        } else {
+            // Show rationale and request permission.
+        }
     }
 
     public void goToDetalhesVendedor(String id, String idC){

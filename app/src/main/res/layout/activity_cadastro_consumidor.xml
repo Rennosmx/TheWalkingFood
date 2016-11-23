@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,6 +14,8 @@
     android:background="@drawable/planodefundo_padrao"
     tools:context="imd.ufrn.br.thewalkingfood.Cadastro.CadastroConsumidorActivity">
 
+
+
     <ImageView
         android:id="@+id/cadastro_consumidor_ImageView"
         android:layout_width="150dp"
@@ -21,6 +24,7 @@
         android:src="@drawable/profile_icon"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+
         />
 
     <RelativeLayout

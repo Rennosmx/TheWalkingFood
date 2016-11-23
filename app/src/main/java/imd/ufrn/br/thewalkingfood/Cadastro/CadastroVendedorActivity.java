@@ -60,6 +60,7 @@ public class CadastroVendedorActivity extends AppCompatActivity {
         //be stored under Users/Vendedor Node. And its Identifier will be the Unique Id provided by FirebaseUser
         databaseReference = firebaseDatabase.getReference().child("Users").child("Vendedor").child(firebaseUser.getUid());
 
+
         vendedorNameEditText = (EditText) findViewById(R.id.cadastro_vendedor_EditText_Nome);
 
         vendedorNumberEditText = (EditText) findViewById(R.id.cadastro_vendedor_EditText_Numero);
@@ -154,9 +155,4 @@ public class CadastroVendedorActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-
-
-
-
-
 }
