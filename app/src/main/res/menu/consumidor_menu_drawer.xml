@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/icon_map_transparent"
+            android:title="Localização" />
+        <item
+            android:id="@+id/nav_vendedores"
+            android:icon="@drawable/icon_vendedores_transparent"
+            android:title="Lista de Vendedores" />
+        <item
+            android:id="@+id/nav_chat"
+            android:icon="@drawable/icon_chat_transparent"
+            android:title="Chat" />
+        <item
+            android:id="@+id/nav_feed"
+            android:icon="@drawable/icon_feed_transparent"
+            android:title="Feed" />
+    </group>
+
+</menu>

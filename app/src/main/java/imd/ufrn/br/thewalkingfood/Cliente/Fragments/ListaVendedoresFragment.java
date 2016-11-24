@@ -37,11 +37,11 @@ public class ListaVendedoresFragment extends Fragment {
     private ListView listView;
 
     private Context context;
-
+/*
     public ListaVendedoresFragment() {
         // Required empty public constructor
     }
-
+*/
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

@@ -6,16 +6,25 @@ import android.location.Location;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,11 +40,14 @@ import imd.ufrn.br.thewalkingfood.R;
 import imd.ufrn.br.thewalkingfood.Vendedor.TelaInicialVendedorActivity;
 
 public class TelaInicialConsumidorActivity extends AppCompatActivity implements
-        OnMapReadyCallback{
+        OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener{
+
 
     private BottomBar bottomBar;
 
     private String idConsumidor;
+
+    private ImageView imgBicycle;
 
     private ListaVendedoresFragment vendedoresFragment;
 
@@ -47,6 +59,18 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_inicial_consumidor);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.menu_lateral_consumidor);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
@@ -65,6 +89,8 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements
         //Initialize with this fragment
         fragmentTransaction.add(R.id.tela_inicial_consumidor_BottomBarContainer, mapFragment);
         fragmentTransaction.commit();
+
+
 
         bottomBar = (BottomBar) findViewById(R.id.tela_inicial_consumidor_BottomBar);
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
@@ -96,6 +122,39 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements
 
 
     }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.menu_lateral_consumidor);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+        FragmentManager fragmentTransaction1 = getSupportFragmentManager();
+
+        if (id == R.id.nav_map) {
+            fragmentTransaction1.beginTransaction().add(R.id.tela_inicial_consumidor_BottomBarContainer, mapFragment).commit();
+        } else if (id == R.id.nav_vendedores) {
+            fragmentTransaction1.beginTransaction().add(R.id.tela_inicial_consumidor_BottomBarContainer, vendedoresFragment).commit();
+        } else if (id == R.id.nav_chat) {
+
+        } else if (id == R.id.nav_feed) {
+            fragmentTransaction1.beginTransaction().add(R.id.tela_inicial_consumidor_BottomBarContainer, consumidorFeedFragment).commit();
+        }
+
+        DrawerLayout drawer1 = (DrawerLayout) findViewById(R.id.menu_lateral_consumidor);
+        drawer1.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
 
     @Override
     protected void onResume() {
