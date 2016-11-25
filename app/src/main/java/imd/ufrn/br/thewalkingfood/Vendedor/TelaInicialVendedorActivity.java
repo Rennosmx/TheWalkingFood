@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
+import imd.ufrn.br.thewalkingfood.Cadastro.CadastroVendedorActivity;
 import imd.ufrn.br.thewalkingfood.Cliente.Fragments.ConsumidorFeedFragment;
 import imd.ufrn.br.thewalkingfood.Cliente.Fragments.ListaVendedoresFragment;
 import imd.ufrn.br.thewalkingfood.Cliente.TelaInicialConsumidorActivity;
@@ -40,11 +41,10 @@ public class TelaInicialVendedorActivity extends AppCompatActivity implements Na
     VendedorProdutosFragment vendedorProdutosFragment;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_inicial_vendedor);
+        setContentView(R.layout.menu_lateral_vendedor);
 
         //Inicialização da ToolBar da Tela Inicial Vendedor com o icone do menu lateral
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_vendedor);
@@ -87,7 +87,7 @@ public class TelaInicialVendedorActivity extends AppCompatActivity implements Na
                 FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
 
                 if (tabId == R.id.bottombar_tabs_tela_inicial_vendedor_produtos) {
-                   fragmentTransaction1.replace(R.id.tela_inicial_vendedor_BottomBarContainer, vendedorProdutosFragment);
+                    fragmentTransaction1.replace(R.id.tela_inicial_vendedor_BottomBarContainer, vendedorProdutosFragment);
 
                 }
                 else if(tabId == R.id.bottombar_tabs_tela_inicial_vendedor_chats){
@@ -123,31 +123,26 @@ public class TelaInicialVendedorActivity extends AppCompatActivity implements Na
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        FragmentManager fragmentTransaction1 = getSupportFragmentManager();
 
         if (id == R.id.nav_produtos) {
-            fragmentTransaction1.beginTransaction().add(R.id.tela_inicial_vendedor_BottomBarContainer, vendedorProdutosFragment).commit();
+            bottomBar.selectTabAtPosition(0);
         } else if (id == R.id.nav_chat) {
-
+            bottomBar.selectTabAtPosition(1);
         } else if (id == R.id.nav_feed) {
-            fragmentTransaction1.beginTransaction().add(R.id.tela_inicial_vendedor_BottomBarContainer, vendedorFeedFragment).commit();
+            bottomBar.selectTabAtPosition(2);
+        } else if (id == R.id.nav_edit_perfil) {
+            Intent intent = new Intent(this, CadastroVendedorActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_add_produto) {
             Intent intent = new Intent(this, VendedorAddProdutoActivity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_edit_produto) {
-            //fragmentTransaction1.beginTransaction().add(R.id.tela_inicial_vendedor_BottomBarContainer, consumidorFeedFragment).commit();
         } else if (id == R.id.nav_add_feed) {
-            Intent intent = new Intent(this, VendedorAddFeedActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_edit_feed) {
-            //fragmentTransaction1.beginTransaction().add(R.id.tela_inicial_vendedor_BottomBarContainer, consumidorFeedFragment).commit();
-        } else if (id == R.id.nav_edit_perfil) {
             Intent intent = new Intent(this, VendedorAddFeedActivity.class);
             startActivity(intent);
         }
 
         //Após item ser escolhido menu lateral é fechado
-        DrawerLayout drawer1 = (DrawerLayout) findViewById(R.id.menu_lateral_consumidor);
+        DrawerLayout drawer1 = (DrawerLayout) findViewById(R.id.menu_lateral_vendedor);
         drawer1.closeDrawer(GravityCompat.START);
         return true;
     }

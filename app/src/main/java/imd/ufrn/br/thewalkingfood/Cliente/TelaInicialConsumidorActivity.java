@@ -58,7 +58,7 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_inicial_consumidor);
+        setContentView(R.layout.menu_lateral_consumidor);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -69,7 +69,7 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_consumidor);
         navigationView.setNavigationItemSelectedListener(this);
 
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -138,16 +138,15 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        FragmentManager fragmentTransaction1 = getSupportFragmentManager();
 
         if (id == R.id.nav_map) {
-            fragmentTransaction1.beginTransaction().add(R.id.tela_inicial_consumidor_BottomBarContainer, mapFragment).commit();
+            bottomBar.selectTabAtPosition(0);
         } else if (id == R.id.nav_vendedores) {
-            fragmentTransaction1.beginTransaction().add(R.id.tela_inicial_consumidor_BottomBarContainer, vendedoresFragment).commit();
+            bottomBar.selectTabAtPosition(1);
         } else if (id == R.id.nav_chat) {
-
+            bottomBar.selectTabAtPosition(2);
         } else if (id == R.id.nav_feed) {
-            fragmentTransaction1.beginTransaction().add(R.id.tela_inicial_consumidor_BottomBarContainer, consumidorFeedFragment).commit();
+            bottomBar.selectTabAtPosition(3);
         }
 
         DrawerLayout drawer1 = (DrawerLayout) findViewById(R.id.menu_lateral_consumidor);
