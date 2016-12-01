@@ -81,7 +81,7 @@ public class ListAdapterVendedores extends BaseAdapter {
 
     @Override
     public long getItemId(int i) {
-        return Long.parseLong(vendedores.get(i).getIdA());
+        return 0;
     }
 
     @Override

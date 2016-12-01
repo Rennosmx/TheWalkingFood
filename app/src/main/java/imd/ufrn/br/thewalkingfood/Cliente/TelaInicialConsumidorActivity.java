@@ -35,6 +35,7 @@ import com.roughike.bottombar.OnTabSelectListener;
 import imd.ufrn.br.thewalkingfood.ChatScreenActivity;
 import imd.ufrn.br.thewalkingfood.Cliente.Fragments.ConsumidorFeedFragment;
 import imd.ufrn.br.thewalkingfood.Cliente.Fragments.ListaVendedoresFragment;
+import imd.ufrn.br.thewalkingfood.Common.SelecaoPerfilActivity;
 import imd.ufrn.br.thewalkingfood.Manifest;
 import imd.ufrn.br.thewalkingfood.R;
 import imd.ufrn.br.thewalkingfood.Vendedor.TelaInicialVendedorActivity;
@@ -129,7 +130,9 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            //super.onBackPressed();
+            FirebaseAuth.getInstance().signOut();
+            goToSelecaoPerfil();
         }
     }
 
@@ -188,6 +191,13 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements
         Intent intent = new Intent(TelaInicialConsumidorActivity.this, TelaDetalhesVendedorActivity.class);
         intent.putExtra("idVendedor", id);
         intent.putExtra("idConsumidor", idC);
+        startActivity(intent);
+        finish();
+    }
+
+    public void goToSelecaoPerfil(){
+        Intent intent = new Intent(TelaInicialConsumidorActivity.this, SelecaoPerfilActivity.class);
+
         startActivity(intent);
         finish();
     }

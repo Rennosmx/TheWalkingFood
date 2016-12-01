@@ -71,7 +71,7 @@ public class VendedorAddFeedActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        DatabaseReference produtos = firebaseDatabase.getReference().child("Users").child("Vendedor").child(firebaseUser.getUid()).child("produtos");
+        DatabaseReference produtos = firebaseDatabase.getReference().child("Users").child("Vendedor").child(firebaseUser.getUid()).child("feed");
 
         StorageReference root = firebaseStorage.getReference();
 
