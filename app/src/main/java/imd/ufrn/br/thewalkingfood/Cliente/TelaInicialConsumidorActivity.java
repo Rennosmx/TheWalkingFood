@@ -2,11 +2,14 @@ package imd.ufrn.br.thewalkingfood.Cliente;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
@@ -22,11 +25,16 @@ import android.widget.ImageView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.roughike.bottombar.BottomBar;
@@ -40,8 +48,14 @@ import imd.ufrn.br.thewalkingfood.Manifest;
 import imd.ufrn.br.thewalkingfood.R;
 import imd.ufrn.br.thewalkingfood.Vendedor.TelaInicialVendedorActivity;
 
-public class TelaInicialConsumidorActivity extends AppCompatActivity implements
-        OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener{
+public class TelaInicialConsumidorActivity
+        extends AppCompatActivity
+        implements
+        OnMapReadyCallback,
+        NavigationView.OnNavigationItemSelectedListener,
+        GoogleApiClient.ConnectionCallbacks,
+        GoogleApiClient.OnConnectionFailedListener,
+        LocationListener {
 
 
     private BottomBar bottomBar;
@@ -56,6 +70,14 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements
 
     private ConsumidorFeedFragment consumidorFeedFragment;
 
+    //Variáveis necessárias para setar marcador na localização do dispositivo
+    private GoogleMap mMap;
+    private GoogleApiClient mGoogleApiClient;
+    private Location mLastLocation;
+    private MarkerOptions markerOptionsCurrent;
+    private Marker markerCurrent;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +86,7 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //Inicialização da Aba Lateral
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.menu_lateral_consumidor);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -121,6 +144,14 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements
 
         mapFragment.getMapAsync(this);
 
+        // Instanciando o GoogleApiClient, caso seja nulo
+        if (mGoogleApiClient == null) {
+            mGoogleApiClient = new GoogleApiClient.Builder(this)
+                    .addConnectionCallbacks(this) // Interface ConnectionCallbacks
+                    .addOnConnectionFailedListener(this) //Interface OnConnectionFailedListener
+                    .addApi(LocationServices.API) // Vamos a API do LocationServices
+                    .build();
+        }
 
     }
 
@@ -157,11 +188,21 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements
         return true;
     }
 
+    @Override
+    protected void onStart() {
+        mGoogleApiClient.connect();
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        mGoogleApiClient.disconnect();
+        super.onStop();
+    }
 
     @Override
     protected void onResume() {
         super.onResume();
-
     }
 
     public void goToMamaProfile(){
@@ -180,8 +221,11 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements
     @Override
     public void onMapReady(GoogleMap googleMap) {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED) {
-            googleMap.setMyLocationEnabled(true);
+                                                    == PackageManager.PERMISSION_GRANTED) {
+
+            mMap = googleMap;
+            mMap.setMyLocationEnabled(true);
+
         } else {
             // Show rationale and request permission.
         }
@@ -202,4 +246,65 @@ public class TelaInicialConsumidorActivity extends AppCompatActivity implements
         finish();
     }
 
+    public Bitmap resizeMapIcons(String iconName,int width, int height) {
+        Bitmap imageBitmap = BitmapFactory.decodeResource(getResources(), getResources().getIdentifier(iconName, "drawable", getPackageName()));
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(imageBitmap, width, height, false);
+        return resizedBitmap;
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+        mLastLocation = location;
+
+        if (markerCurrent != null){
+            markerCurrent.remove();
+        }
+
+        //Place current location marker
+        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+        markerOptionsCurrent = new MarkerOptions();
+        markerOptionsCurrent.position(latLng);
+        markerOptionsCurrent.icon(BitmapDescriptorFactory.fromBitmap(resizeMapIcons("mapa_consumidor",125,125)));
+
+        markerCurrent = mMap.addMarker(markerOptionsCurrent);
+    }
+
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+// pegamos a ultima localização
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+
+        if (mLastLocation != null) {
+            if(mMap != null){
+
+                // Criamos o LatLng através do Location
+                LatLng latLng = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
+                // Adicionamos um Marker com a posição...
+                markerCurrent = mMap.addMarker(new MarkerOptions()
+                        .position(latLng)
+                        .icon(BitmapDescriptorFactory
+                                .fromBitmap(resizeMapIcons("mapa_consumidor",125,125))));
+            }
+        }
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
 }
