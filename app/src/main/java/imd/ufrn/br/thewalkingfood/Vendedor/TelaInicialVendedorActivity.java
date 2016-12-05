@@ -26,6 +26,7 @@ import imd.ufrn.br.thewalkingfood.Cadastro.CadastroVendedorActivity;
 import imd.ufrn.br.thewalkingfood.Cliente.Fragments.ConsumidorFeedFragment;
 import imd.ufrn.br.thewalkingfood.Cliente.Fragments.ListaVendedoresFragment;
 import imd.ufrn.br.thewalkingfood.Cliente.TelaInicialConsumidorActivity;
+import imd.ufrn.br.thewalkingfood.Common.SelecaoPerfilActivity;
 import imd.ufrn.br.thewalkingfood.R;
 import imd.ufrn.br.thewalkingfood.Vendedor.Fragments.VendedorFeedFragment;
 import imd.ufrn.br.thewalkingfood.Vendedor.Fragments.VendedorProdutosFragment;
@@ -112,7 +113,9 @@ public class TelaInicialVendedorActivity extends AppCompatActivity implements Na
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            //super.onBackPressed();
+            FirebaseAuth.getInstance().signOut();
+            goToSelecaoPerfil();
         }
     }
 
@@ -158,4 +161,12 @@ public class TelaInicialVendedorActivity extends AppCompatActivity implements Na
         startActivity(intent);
         finish();
     }
+
+    public void goToSelecaoPerfil(){
+        Intent intent = new Intent(TelaInicialVendedorActivity.this, SelecaoPerfilActivity.class);
+
+        startActivity(intent);
+        finish();
+    }
+
 }
